@@ -9,6 +9,6 @@ export const Logo = () => (
       height={48}
       className="w-12 h-12"
     />
-    <span className="text-2xl font-playfair font-semibold text-foreground">Coco AI</span>
+    <span className="text-2xl font-playfair font-bold text-foreground">Coco AI</span>
   </div>
 );
