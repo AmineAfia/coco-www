@@ -9,33 +9,29 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "PureLanding - Beautiful Shadcn UI Landing Page",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://your-domain.vercel.app'),
+  title: "Coco AI - Ihre KI-Begleiterin für eine sorgenfreie Schwangerschaft",
   description:
-    "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+    "Ihre KI-Begleiterin für eine sorgenfreie Schwangerschaft - mit sofortiger Beratung, individueller Planung und verlässlicher Unterstützung rund um die Uhr.",
   keywords: [
-    "PureLanding",
-    "PureLanding Landing Page",
-    "PureLanding Landing Page Template",
-    "PureLanding Page",
-    "Shadcn UI Landing Page",
-    "Shadcn UI Blocks",
-    "Shadcn UI",
-    "Landing Page",
-    "Tailwind CSS Landing Page",
-    "Beautiful Shadcn UI Landing Page",
-    "Next.js 15 Landing Page",
-    "Simple Landing Page",
-    "Landing Page Template",
-    "Landing Page Design",
+    "Coco AI",
+    "Schwangerschaft",
+    "KI-Begleiterin",
+    "Schwangerschaftsberatung",
+    "AI Schwangerschaft",
+    "Schwangerschaftsplanung",
+    "Mutterschaft",
+    "WhatsApp Beratung",
+    "Schwangerschaftsunterstützung",
   ],
   openGraph: {
     type: "website",
-    siteName: "PureLanding",
-    locale: "en_US",
-    url: "https://shadcn-landing-page.vercel.app",
-    title: "PureLanding - Beautiful Shadcn UI Landing Page",
+    siteName: "Coco AI",
+    locale: "de_DE",
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://your-domain.vercel.app',
+    title: "Coco AI - Ihre KI-Begleiterin für eine sorgenfreie Schwangerschaft",
     description:
-      "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+      "Ihre KI-Begleiterin für eine sorgenfreie Schwangerschaft - mit sofortiger Beratung, individueller Planung und verlässlicher Unterstützung rund um die Uhr.",
     images: [
       {
         url: "/og-image.jpg",
