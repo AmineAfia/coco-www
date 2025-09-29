@@ -4,7 +4,7 @@ import { NavigationSheet } from "./navigation-sheet";
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-10 top-6 inset-x-4 h-16 xs:h-18 bg-foreground/5 backdrop-blur-lg border border-border/40 shadow-soft max-w-screen-xl mx-auto rounded-full">
+    <nav className="fixed z-10 top-6 inset-x-4 h-16 xs:h-18 bg-foreground/5 backdrop-blur-lg shadow-soft max-w-screen-xl mx-auto rounded-full">
       <div className="h-full flex items-center justify-between mx-auto px-6">
         <Logo />
 
