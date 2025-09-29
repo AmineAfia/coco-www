@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 export const Logo = () => (
-  <div className="flex items-center gap-3">
+  <div className="flex items-center gap-4">
     <Image
       src="/coco-logo.png"
       alt="Coco Logo"
-      width={33}
-      height={33}
-      className="w-8 h-8"
+      width={48}
+      height={48}
+      className="w-12 h-12"
     />
-    <span className="text-xl font-bold text-foreground">Coco AI</span>
+    <span className="text-2xl font-playfair font-semibold text-foreground">Coco AI</span>
   </div>
 );
