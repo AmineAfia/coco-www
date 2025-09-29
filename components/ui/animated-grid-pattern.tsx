@@ -54,7 +54,7 @@ export function AnimatedGridPattern({
       id: i,
       pos: getPos(),
     }));
-  }, [dimensions.width, dimensions.height]);
+  }, [dimensions.width, dimensions.height, getPos]);
 
   // Function to update a single square's position
   const updateSquarePosition = (id: number) => {

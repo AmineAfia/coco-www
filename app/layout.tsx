@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import "./globals-backup.css";
 
 const geistSans = Geist({
   subsets: ["latin"],
