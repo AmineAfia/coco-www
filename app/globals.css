@@ -99,7 +99,7 @@
 		@apply scroll-smooth scroll-pt-12;
 	}
 	body {
-		@apply text-foreground font-inter antialiased;
+		@apply text-foreground font-inter antialiased bg-warm-gradient;
 	}
 }
 
