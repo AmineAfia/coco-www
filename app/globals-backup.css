@@ -15,11 +15,11 @@
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, hsl(var(--background)) 0%, #f0ede6 100%);
-  color: hsl(var(--foreground));
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+	background: linear-gradient(135deg, hsl(var(--background)) 0%, #f0ede6 100%);
+	color: hsl(var(--foreground));
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Critical custom classes */
