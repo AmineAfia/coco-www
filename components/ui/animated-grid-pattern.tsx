@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import {
-  ComponentPropsWithoutRef,
+  type ComponentPropsWithoutRef,
   useCallback,
   useEffect,
   useId,
@@ -75,7 +75,7 @@ export function AnimatedGridPattern({
     if (dimensions.width && dimensions.height) {
       setSquares(generateSquares(numSquares));
     }
-  }, [dimensions.width, dimensions.height, numSquares]);
+  }, [dimensions.width, dimensions.height, numSquares, generateSquares]);
 
   // Resize observer to update container dimensions
   useEffect(() => {
@@ -127,7 +127,7 @@ export function AnimatedGridPattern({
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${id})`} />
-      <svg x={x} y={y} className="overflow-visible">
+      <svg x={x} y={y} className="overflow-visible" aria-hidden="true">
         {squares.map(({ pos: [x, y], id }, index) => (
           <motion.rect
             initial={{ opacity: 0 }}
@@ -139,7 +139,7 @@ export function AnimatedGridPattern({
               repeatType: "reverse",
             }}
             onAnimationComplete={() => updateSquarePosition(id)}
-            key={`${x}-${y}-${index}`}
+            key={`${x}-${y}-${id}`}
             width={width - 1}
             height={height - 1}
             x={x * width + 1}

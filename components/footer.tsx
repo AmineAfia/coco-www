@@ -5,35 +5,12 @@ import {
   Instagram,
   Facebook,
   Youtube,
-  Heart,
   Baby,
   MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-const footerLinks = [
-  {
-    title: "Schwangerschaftsbegleitung",
-    href: "#features",
-  },
-  {
-    title: "Kostenlos starten",
-    href: "https://wa.me/+15558876420?text=Hallo%20Coco",
-  },
-  {
-    title: "Häufige Fragen",
-    href: "#faq",
-  },
-  {
-    title: "Erfahrungen",
-    href: "#testimonials",
-  },
-  {
-    title: "Datenschutz",
-    href: "#privacy",
-  },
-];
 
 const Footer = () => {
   return (

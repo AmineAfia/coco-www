@@ -215,7 +215,7 @@ const Features = () => {
         </p> */}
         
         <ul className="space-y-24 xs:space-y-32" aria-label="Schwangerschafts-Features">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <li
               key={feature.id}
               className={`flex flex-col ${feature.layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-16`}
