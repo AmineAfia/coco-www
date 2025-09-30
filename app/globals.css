@@ -182,21 +182,13 @@
 		font-family: "Playfair Display", Georgia, serif;
 	}
 
-	/* Custom Gradient Utilities */
+	/* Custom Color Utilities */
 	.bg-coral-gradient {
-		background: linear-gradient(
-			135deg,
-			hsl(var(--coral)) 0%,
-			hsl(var(--terracotta)) 100%
-		);
+		background-color: hsl(var(--coral));
 	}
 
 	.bg-sage-gradient {
-		background: linear-gradient(
-			135deg,
-			hsl(var(--sage)) 0%,
-			hsl(var(--turquoise)) 100%
-		);
+		background-color: hsl(var(--sage));
 	}
 
 	.bg-warm-gradient {
@@ -221,32 +213,22 @@
 	/* Button Enhancements */
 	.btn-primary {
 		@apply text-white transition-all duration-300 hover:scale-105;
-		background: linear-gradient(
-			135deg,
-			hsl(var(--coral)) 0%,
-			hsl(var(--terracotta)) 100%
-		);
-		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
-			hsl(var(--sage) / 0.1);
+		background-color: hsl(var(--coral));
+		box-shadow: 0 2px 8px -2px hsl(var(--coral) / 0.3);
 	}
 	.btn-primary:hover {
-		box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
-			hsl(var(--sage) / 0.15);
+		background-color: hsl(var(--coral) / 0.9);
+		box-shadow: 0 4px 16px -4px hsl(var(--coral) / 0.4);
 	}
 
 	.btn-secondary {
 		@apply text-white transition-all duration-300 hover:scale-105;
-		background: linear-gradient(
-			135deg,
-			hsl(var(--sage)) 0%,
-			hsl(var(--turquoise)) 100%
-		);
-		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
-			hsl(var(--sage) / 0.1);
+		background-color: hsl(var(--sage));
+		box-shadow: 0 2px 8px -2px hsl(var(--sage) / 0.3);
 	}
 	.btn-secondary:hover {
-		box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
-			hsl(var(--sage) / 0.15);
+		background-color: hsl(var(--sage) / 0.9);
+		box-shadow: 0 4px 16px -4px hsl(var(--sage) / 0.4);
 	}
 
 	/* Card Styling */
