@@ -5,15 +5,11 @@ const nextConfig: NextConfig = {
 	compiler: {
 		removeConsole: process.env.NODE_ENV === "production",
 	},
-	// Force CSS to be processed correctly on Vercel
-	webpack: (config, { isServer }) => {
-		if (!isServer) {
-			config.resolve.fallback = {
-				...config.resolve.fallback,
-				fs: false,
-			};
-		}
-		return config;
+	// Minimal configuration to avoid Turbopack/Webpack conflicts
+	experimental: {
+		turbo: {
+			// Turbopack-specific rules
+		},
 	},
 };
 
