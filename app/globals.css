@@ -1,194 +1,376 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-	:root {
-		/* Pregnancy Brand Color System */
-		--background: 45 20% 95%;
-		--foreground: 0 0% 17%;
-
-		--card: 45 25% 92%;
-		--card-foreground: 0 0% 17%;
-
-		--popover: 45 20% 95%;
-		--popover-foreground: 0 0% 17%;
-
-		--primary: 15 65% 60%;
-		--primary-foreground: 0 0% 98%;
-
-		--secondary: 45 15% 88%;
-		--secondary-foreground: 0 0% 17%;
-
-		--muted: 45 15% 88%;
-		--muted-foreground: 0 0% 35%;
-
-		--accent: 160 25% 45%;
-		--accent-foreground: 0 0% 98%;
-
-		--destructive: 0 65% 55%;
-		--destructive-foreground: 0 0% 98%;
-
-		--border: 45 15% 85%;
-		--input: 45 15% 85%;
-		--ring: 15 65% 60%;
-
-		/* Pregnancy Brand Specific Colors */
-		--coral: 15 65% 60%;
-		--sage: 160 25% 45%;
-		--dusty-rose: 0 25% 70%;
-		--lavender: 280 20% 65%;
-		--turquoise: 180 45% 45%;
-		--terracotta: 20 50% 55%;
-
-		--chart-1: 15 65% 60%;
-		--chart-2: 160 25% 45%;
-		--chart-3: 0 25% 70%;
-		--chart-4: 280 20% 65%;
-		--chart-5: 20 50% 55%;
-
-		--radius: 0.75rem;
-	}
-	.dark {
-		/* Dark mode with warm undertones */
-		--background: 45 15% 8%;
-		--foreground: 45 20% 95%;
-
-		--card: 45 15% 12%;
-		--card-foreground: 45 20% 95%;
-
-		--popover: 45 15% 8%;
-		--popover-foreground: 45 20% 95%;
-
-		--primary: 15 65% 65%;
-		--primary-foreground: 0 0% 9%;
-
-		--secondary: 45 15% 15%;
-		--secondary-foreground: 45 20% 95%;
-
-		--muted: 45 15% 15%;
-		--muted-foreground: 45 10% 65%;
-
-		--accent: 160 25% 50%;
-		--accent-foreground: 0 0% 9%;
-
-		--destructive: 0 65% 60%;
-		--destructive-foreground: 0 0% 9%;
-
-		--border: 45 15% 20%;
-		--input: 45 15% 20%;
-		--ring: 15 65% 65%;
-
-		--chart-1: 15 65% 65%;
-		--chart-2: 160 25% 50%;
-		--chart-3: 0 25% 75%;
-		--chart-4: 280 20% 70%;
-		--chart-5: 20 50% 60%;
-	}
+/* Production-safe CSS variables - defined before @theme for maximum compatibility */
+:root {
+  /* Pregnancy Brand Color System - Production Safe */
+  --background: 45 20% 95%;
+  --foreground: 0 0% 17%;
+  --card: 45 25% 92%;
+  --card-foreground: 0 0% 17%;
+  --popover: 45 20% 95%;
+  --popover-foreground: 0 0% 17%;
+  --primary: 15 65% 60%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 45 15% 88%;
+  --secondary-foreground: 0 0% 17%;
+  --muted: 45 15% 88%;
+  --muted-foreground: 0 0% 35%;
+  --accent: 160 25% 45%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 65% 55%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 45 15% 85%;
+  --input: 45 15% 85%;
+  --ring: 15 65% 60%;
+  
+  /* Pregnancy Brand Specific Colors */
+  --coral: 15 65% 60%;
+  --sage: 160 25% 45%;
+  --dusty-rose: 0 25% 70%;
+  --lavender: 280 20% 65%;
+  --turquoise: 180 45% 45%;
+  --terracotta: 20 50% 55%;
+  
+  --chart-1: 15 65% 60%;
+  --chart-2: 160 25% 45%;
+  --chart-3: 0 25% 70%;
+  --chart-4: 280 20% 65%;
+  --chart-5: 20 50% 55%;
+  
+  --radius: 0.75rem;
 }
 
+.dark {
+  --background: 45 15% 8%;
+  --foreground: 45 20% 95%;
+  --card: 45 15% 12%;
+  --card-foreground: 45 20% 95%;
+  --popover: 45 15% 8%;
+  --popover-foreground: 45 20% 95%;
+  --primary: 15 65% 65%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 45 15% 15%;
+  --secondary-foreground: 45 20% 95%;
+  --muted: 45 15% 15%;
+  --muted-foreground: 45 10% 65%;
+  --accent: 160 25% 50%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 65% 60%;
+  --destructive-foreground: 0 0% 9%;
+  --border: 45 15% 20%;
+  --input: 45 15% 20%;
+  --ring: 15 65% 65%;
+  --chart-1: 15 65% 65%;
+  --chart-2: 160 25% 50%;
+  --chart-3: 0 25% 75%;
+  --chart-4: 280 20% 70%;
+  --chart-5: 20 50% 60%;
+}
 
+@theme {
+  /* Font families */
+  --font-family-inter: "Inter", system-ui, sans-serif;
+  --font-family-playfair: "Playfair Display", Georgia, serif;
+  
+  /* Custom screens */
+  --breakpoint-xs: 375px;
+  
+  /* Custom animations */
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  
+  /* Pregnancy Brand Color System */
+  --color-background: 45 20% 95%;
+  --color-foreground: 0 0% 17%;
+  --color-card: 45 25% 92%;
+  --color-card-foreground: 0 0% 17%;
+  --color-popover: 45 20% 95%;
+  --color-popover-foreground: 0 0% 17%;
+  --color-primary: 15 65% 60%;
+  --color-primary-foreground: 0 0% 98%;
+  --color-secondary: 45 15% 88%;
+  --color-secondary-foreground: 0 0% 17%;
+  --color-muted: 45 15% 88%;
+  --color-muted-foreground: 0 0% 35%;
+  --color-accent: 160 25% 45%;
+  --color-accent-foreground: 0 0% 98%;
+  --color-destructive: 0 65% 55%;
+  --color-destructive-foreground: 0 0% 98%;
+  --color-border: 45 15% 85%;
+  --color-input: 45 15% 85%;
+  --color-ring: 15 65% 60%;
+  
+  /* Pregnancy Brand Specific Colors */
+  --color-coral: 15 65% 60%;
+  --color-sage: 160 25% 45%;
+  --color-dusty-rose: 0 25% 70%;
+  --color-lavender: 280 20% 65%;
+  --color-turquoise: 180 45% 45%;
+  --color-terracotta: 20 50% 55%;
+  
+  --color-chart-1: 15 65% 60%;
+  --color-chart-2: 160 25% 45%;
+  --color-chart-3: 0 25% 70%;
+  --color-chart-4: 280 20% 65%;
+  --color-chart-5: 20 50% 55%;
+  
+  --radius: 0.75rem;
+}
 
 @layer base {
 	* {
-		@apply border-border outline-ring/50;
+		border-color: hsl(var(--border));
+		outline-color: hsl(var(--ring) / 0.5);
 	}
 	html {
 		@apply scroll-smooth scroll-pt-12;
+		background-color: hsl(var(--background));
 	}
 	body {
-		@apply text-foreground font-inter antialiased bg-warm-gradient;
-		font-family: var(--font-inter), "Inter", system-ui, -apple-system,
-			sans-serif;
-	}
-}
-
-@layer components {
-	/* Typography System */
-	.font-inter {
-		font-family: "Inter", system-ui, -apple-system, sans-serif;
-	}
-
-	.font-playfair {
-		font-family: "Playfair Display", Georgia, serif;
-	}
-
-	/* Custom Gradient Utilities */
-	.bg-coral-gradient {
-		background: linear-gradient(
-			135deg,
-			hsl(var(--coral)) 0%,
-			hsl(var(--terracotta)) 100%
-		);
-	}
-
-	.bg-sage-gradient {
-		background: linear-gradient(
-			135deg,
-			hsl(var(--sage)) 0%,
-			hsl(var(--turquoise)) 100%
-		);
-	}
-
-	.bg-warm-gradient {
+		@apply antialiased;
+		color: hsl(var(--foreground));
 		background: linear-gradient(
 			135deg,
 			hsl(var(--background)) 0%,
 			hsl(45 25% 92%) 100%
 		);
+		font-family: var(--font-inter), "Inter", system-ui, -apple-system,
+			sans-serif;
 	}
+	
+	/* Force background colors for common elements - Production Safe */
+	.bg-background {
+		background-color: hsl(var(--background)) !important;
+	}
+	
+	.bg-card {
+		background-color: hsl(var(--card)) !important;
+	}
+	
+	.bg-muted {
+		background-color: hsl(var(--muted)) !important;
+	}
+	
+	/* Production-safe background color fallbacks */
+	body, html {
+		background-color: hsl(var(--background)) !important;
+	}
+	
+	/* Ensure all Tailwind background utilities work in production */
+	.bg-white {
+		background-color: #ffffff !important;
+	}
+	
+	.bg-gray-50 {
+		background-color: #f9fafb !important;
+	}
+	
+	.bg-gray-100 {
+		background-color: #f3f4f6 !important;
+	}
+}
 
-	/* Soft Shadow System */
-	.shadow-soft {
-		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
-			hsl(var(--sage) / 0.1);
-	}
+@layer components {
+	/* Typography System */
+				.font-inter {
+				font-family: "Inter", system-ui, -apple-system, sans-serif;
+			}
 
-	.shadow-soft-lg {
-		box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
-			hsl(var(--sage) / 0.15);
-	}
+			.font-playfair {
+				font-family: "Playfair Display", Georgia, serif;
+			}
 
-	/* Button Enhancements */
-	.btn-primary {
-		@apply bg-coral-gradient text-white shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:scale-105;
-	}
+			/* Custom Color Utilities */
+				.bg-coral-gradient {
+				background-color: hsl(var(--coral));
+			}
 
-	.btn-secondary {
-		@apply bg-sage-gradient text-white shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:scale-105;
-	}
+			.bg-sage-gradient {
+				background-color: hsl(var(--sage));
+			}
 
-	/* Card Styling */
-	.card-warm {
-		@apply bg-card border border-border/50 shadow-soft rounded-xl;
-	}
+			.bg-warm-gradient {
+				background: linear-gradient(
+					135deg,
+					hsl(var(--background)) 0%,
+					hsl(45 25% 92%) 100%
+				);
+			}
 
-	/* Enhanced Focus States */
-	.focus-warm {
-		@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral/50 focus-visible:ring-offset-2;
-	}
+			/* Soft Shadow System */
+				.shadow-soft {
+				box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+					hsl(var(--sage) / 0.1);
+			}
 
-	/* Smooth Transitions */
-	.transition-warm {
-		@apply transition-all duration-300 ease-out;
-	}
+			.shadow-soft-lg {
+				box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
+					hsl(var(--sage) / 0.15);
+			}
 
-	/* Text Gradients */
-	.text-coral-gradient {
-		background: linear-gradient(
-			135deg,
-			hsl(var(--coral)) 0%,
-			hsl(var(--terracotta)) 100%
-		);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-	}
+			/* Button Enhancements */
+				.btn-primary {
+				@apply text-white transition-all duration-300 hover:scale-105;
+				background-color: hsl(var(--coral));
+				box-shadow: 0 2px 8px -2px hsl(var(--coral) / 0.3);
+			}
+			.btn-primary:hover {
+				background-color: hsl(var(--coral) / 0.9);
+				box-shadow: 0 4px 16px -4px hsl(var(--coral) / 0.4);
+			}
 
-	/* Enhanced Hover Effects */
-	.hover-lift {
-		@apply hover:scale-105 hover:shadow-soft-lg transition-all duration-300;
-	}
+			.btn-secondary {
+				@apply text-white transition-all duration-300 hover:scale-105;
+				background-color: hsl(var(--sage));
+				box-shadow: 0 2px 8px -2px hsl(var(--sage) / 0.3);
+			}
+			.btn-secondary:hover {
+				background-color: hsl(var(--sage) / 0.9);
+				box-shadow: 0 4px 16px -4px hsl(var(--sage) / 0.4);
+			}
+
+			/* Card Styling */
+				.card-warm {
+				@apply rounded-xl;
+				background-color: hsl(var(--card));
+				border: 1px solid hsl(var(--border) / 0.5);
+				box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+					hsl(var(--sage) / 0.1);
+			}
+
+			/* Enhanced Card Border System */
+				.card-border-coral {
+				border: 1px solid hsl(var(--coral) / 0.2);
+				box-shadow: 0 0 0 1px hsl(var(--coral) / 0.1), 0 4px 20px -4px
+					hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+			}
+
+			.card-border-sage {
+				border: 1px solid hsl(var(--sage) / 0.2);
+				box-shadow: 0 0 0 1px hsl(var(--sage) / 0.1), 0 4px 20px -4px
+					hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+			}
+
+			.card-border-warm {
+				border: 1px solid hsl(var(--border) / 0.1);
+				box-shadow: 0 0 0 1px hsl(var(--coral) / 0.05), 0 4px 20px -4px
+					hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+			}
+
+			.card-border-gradient {
+				border: 1px solid transparent;
+				background: linear-gradient(hsl(var(--card)), hsl(var(--card)))
+					padding-box,
+					linear-gradient(
+						135deg,
+						hsl(var(--coral) / 0.3),
+						hsl(var(--sage) / 0.3)
+					)
+					border-box;
+				box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+					hsl(var(--sage) / 0.1);
+			}
+
+			/* Enhanced Focus States */
+				.focus-warm {
+				@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+			}
+			.focus-warm:focus-visible {
+				--tw-ring-color: hsl(var(--coral) / 0.5);
+			}
+
+			/* Smooth Transitions */
+				.transition-warm {
+				@apply transition-all duration-300 ease-out;
+			}
+
+			/* Text Gradients */
+				.text-coral-gradient {
+				background: linear-gradient(
+					135deg,
+					hsl(var(--coral)) 0%,
+					hsl(var(--terracotta)) 100%
+				);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			/* Enhanced Hover Effects */
+				.hover-lift {
+				@apply hover:scale-105 transition-all duration-300;
+			}
+			.hover-lift:hover {
+				box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
+					hsl(var(--sage) / 0.15);
+			}
+
+			/* Direct color classes for feature cards - Tailwind 4 compatibility */
+				.bg-coral-direct {
+				background-color: hsl(var(--coral)) !important;
+			}
+
+			.text-coral-direct {
+				color: hsl(var(--coral)) !important;
+			}
+
+			.bg-sage-direct {
+				background-color: hsl(var(--sage)) !important;
+			}
+
+			.text-sage-direct {
+				color: hsl(var(--sage)) !important;
+			}
+
+			.bg-muted-direct {
+				background-color: hsl(var(--muted)) !important;
+			}
+
+			.text-muted-direct {
+				color: hsl(var(--muted-foreground)) !important;
+			}
+
+			/* Footer border and hover classes */
+				.border-coral-direct {
+				border-color: hsl(var(--coral) / 0.2) !important;
+			}
+
+			.hover-text-coral-direct:hover {
+				color: hsl(var(--coral)) !important;
+			}
+
+			/* CTA Banner color and gradient classes */
+				.bg-gradient-coral-sage {
+				background: linear-gradient(
+					135deg,
+					hsl(var(--coral) / 0.1),
+					hsl(var(--sage) / 0.1)
+				) !important;
+			}
+
+			.text-coral-direct {
+				color: hsl(var(--coral)) !important;
+			}
+
+			.text-sage-direct {
+				color: hsl(var(--sage)) !important;
+			}
+
+			.hover-text-coral-90:hover {
+				color: hsl(var(--coral) / 0.9) !important;
+			}
+
+			.border-coral-30 {
+				border-color: hsl(var(--coral) / 0.3) !important;
+			}
+
+			.hover-bg-coral-5:hover {
+				background-color: hsl(var(--coral) / 0.05) !important;
+			}
+
+			.hover-border-coral-50:hover {
+				border-color: hsl(var(--coral) / 0.5) !important;
+			}
 }

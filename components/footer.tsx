@@ -14,8 +14,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="mt-40 bg-warm-gradient border-t border-border/50">
-      <div className="max-w-screen-xl mx-auto">
+    <footer className="mt-40 bg-warm-gradient border-t border-coral-direct">
+      <div className="max-w-(--breakpoint-xl) mx-auto">
         <div className="py-6 xs:py-8 sm:py-10 px-6 xl:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
             {/* Brand Section */}
@@ -72,7 +72,7 @@ const Footer = () => {
           <div className="text-center sm:text-left">
             <p className="text-muted-foreground">
               &copy; {new Date().getFullYear()}{" "}
-              <Link href="/" className="text-foreground hover:text-coral transition-colors">
+              <Link href="/" className="text-foreground hover-text-coral-direct transition-colors">
                 Coco
               </Link>
               . Alle Rechte vorbehalten.
@@ -88,7 +88,7 @@ const Footer = () => {
               href="https://instagram.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-coral transition-colors duration-200 focus-warm"
+              className="text-muted-foreground hover-text-coral-direct transition-colors duration-200 focus-warm"
               aria-label="Folge uns auf Instagram"
             >
               <Instagram className="h-5 w-5" />
@@ -97,7 +97,7 @@ const Footer = () => {
               href="https://facebook.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-coral transition-colors duration-200 focus-warm"
+              className="text-muted-foreground hover-text-coral-direct transition-colors duration-200 focus-warm"
               aria-label="Folge uns auf Facebook"
             >
               <Facebook className="h-5 w-5" />
@@ -106,7 +106,7 @@ const Footer = () => {
               href="https://youtube.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-coral transition-colors duration-200 focus-warm"
+              className="text-muted-foreground hover-text-coral-direct transition-colors duration-200 focus-warm"
               aria-label="Besuche unseren YouTube Kanal"
             >
               <Youtube className="h-5 w-5" />
@@ -115,7 +115,7 @@ const Footer = () => {
               href="https://wa.me/+15558876420?text=Hallo%20Coco" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-coral transition-colors duration-200 focus-warm"
+              className="text-muted-foreground hover-text-coral-direct transition-colors duration-200 focus-warm"
               aria-label="Chat mit Coco auf WhatsApp"
             >
               <MessageCircle className="h-5 w-5" />

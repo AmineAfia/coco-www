@@ -48,37 +48,37 @@ const features = [
 // Visual Components
 const QuestionChatVisual = () => {
   return (
-    <div className="card-warm p-6 space-y-4">
+    <div className="bg-card card-border-coral rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+        <div className="w-3 h-3 bg-green-500 rounded-full" />
         <span className="text-sm font-medium text-muted-foreground">24/7 verfügbar</span>
       </div>
       
       <div className="space-y-3">
         <div className="flex items-start gap-3">
-          <div className="w-8 h-8 bg-sage-gradient rounded-full flex items-center justify-center">
-            <Users className="w-4 h-4 text-white" />
+          <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
+            <Users className="w-4 h-4 text-muted-foreground" />
           </div>
-          <div className="bg-muted rounded-2xl rounded-tl-sm p-3 max-w-xs">
-            <p className="text-sm">Ist es normal, dass ich so müde bin?</p>
+          <div className="bg-muted-direct rounded-2xl rounded-tl-sm p-3 max-w-xs">
+            <p className="text-sm text-foreground">Ist es normal, dass ich so müde bin?</p>
           </div>
         </div>
         
         <div className="flex items-start gap-3 justify-end">
-          <div className="bg-coral-gradient rounded-2xl rounded-tr-sm p-3 max-w-xs">
+          <div className="bg-coral-direct rounded-2xl rounded-tr-sm p-3 max-w-xs">
             <p className="text-sm text-white">Ja, das ist völlig normal! Müdigkeit ist eines der häufigsten Symptome...</p>
           </div>
-          <div className="w-8 h-8 bg-coral-gradient rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-coral-direct rounded-full flex items-center justify-center">
             <Heart className="w-4 h-4 text-white" />
           </div>
         </div>
         
         <div className="flex items-start gap-3">
-          <div className="w-8 h-8 bg-sage-gradient rounded-full flex items-center justify-center">
-            <Baby className="w-4 h-4 text-white" />
+          <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
+            <Baby className="w-4 h-4 text-muted-foreground" />
           </div>
-          <div className="bg-muted rounded-2xl rounded-tl-sm p-3 max-w-xs">
-            <p className="text-sm">Wann sollte ich zum Arzt gehen?</p>
+          <div className="bg-muted-direct rounded-2xl rounded-tl-sm p-3 max-w-xs">
+            <p className="text-sm text-foreground">Wann sollte ich zum Arzt gehen?</p>
           </div>
         </div>
       </div>
@@ -88,35 +88,41 @@ const QuestionChatVisual = () => {
 
 const ScientificKnowledgeVisual = () => {
   return (
-    <div className="card-warm p-6 space-y-4">
+    <div className="bg-card card-border-sage rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-3 mb-4">
-        <BookOpen className="w-6 h-6 text-coral" />
-        <span className="font-semibold">Wissenschaftliches Wissen</span>
+        <BookOpen className="w-6 h-6 text-coral-direct" />
+        <span className="font-semibold text-foreground">Wissenschaftliches Wissen</span>
       </div>
       
       <div className="space-y-3">
-        <div className="bg-gradient-to-r from-sage/10 to-turquoise/10 rounded-lg p-4 border-l-4 border-sage">
-          <div className="flex items-center gap-2 mb-2">
-            <Stethoscope className="w-4 h-4 text-sage" />
-            <span className="text-sm font-medium">Entwicklung Woche 12</span>
+        <div className="flex items-center gap-3 p-3 rounded-lg">
+          <div className="w-8 h-8 bg-muted-direct rounded-full flex items-center justify-center">
+            <Stethoscope className="w-4 h-4 text-muted-foreground" />
           </div>
-          <p className="text-sm text-muted-foreground">Fötale Organe beginnen sich zu entwickeln...</p>
+          <div>
+            <span className="text-sm font-medium text-foreground">Entwicklung Woche 12</span>
+            <p className="text-sm text-muted-foreground">Fötale Organe beginnen sich zu entwickeln...</p>
+          </div>
         </div>
         
-        <div className="bg-gradient-to-r from-coral/10 to-terracotta/10 rounded-lg p-4 border-l-4 border-coral">
-          <div className="flex items-center gap-2 mb-2">
-            <Heart className="w-4 h-4 text-coral" />
-            <span className="text-sm font-medium">Ernährung & Vitamine</span>
+        <div className="flex items-center gap-3 p-3 rounded-lg">
+          <div className="w-8 h-8 bg-muted-direct rounded-full flex items-center justify-center">
+            <Heart className="w-4 h-4 text-muted-foreground" />
           </div>
-          <p className="text-sm text-muted-foreground">Folsäure, Eisen und Omega-3 sind essentiell...</p>
+          <div>
+            <span className="text-sm font-medium text-foreground">Ernährung & Vitamine</span>
+            <p className="text-sm text-muted-foreground">Folsäure, Eisen und Omega-3 sind essentiell...</p>
+          </div>
         </div>
         
-        <div className="bg-gradient-to-r from-lavender/10 to-dusty-rose/10 rounded-lg p-4 border-l-4 border-lavender">
-          <div className="flex items-center gap-2 mb-2">
-            <BookOpenCheck className="w-4 h-4 text-lavender" />
-            <span className="text-sm font-medium">Studien & Forschung</span>
+        <div className="flex items-center gap-3 p-3 rounded-lg">
+          <div className="w-8 h-8 bg-muted-direct rounded-full flex items-center justify-center">
+            <BookOpenCheck className="w-4 h-4 text-muted-foreground" />
           </div>
-          <p className="text-sm text-muted-foreground">Neueste Erkenntnisse aus der Schwangerschaftsforschung...</p>
+          <div>
+            <span className="text-sm font-medium text-foreground">Studien & Forschung</span>
+            <p className="text-sm text-muted-foreground">Neueste Erkenntnisse aus der Schwangerschaftsforschung...</p>
+          </div>
         </div>
       </div>
     </div>
@@ -125,36 +131,36 @@ const ScientificKnowledgeVisual = () => {
 
 const WeeklyCelebrationVisual = () => {
   return (
-    <div className="card-warm p-6 space-y-4">
+    <div className="bg-card card-border-coral rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-3 mb-4">
-        <Sparkles className="w-6 h-6 text-coral" />
-        <span className="font-semibold">Woche 16 - Zeit zu feiern!</span>
+        <Sparkles className="w-6 h-6 text-coral-direct" />
+        <span className="font-semibold text-foreground">Woche 16 - Zeit zu feiern!</span>
       </div>
       
-      <div className="bg-gradient-to-br from-coral/20 to-terracotta/20 rounded-lg p-4 mb-4">
+      <div className="bg-muted-direct rounded-lg p-4 mb-4">
         <div className="flex items-center gap-2 mb-2">
-          <Calendar className="w-5 h-5 text-coral" />
-          <span className="font-medium">Deine Woche</span>
+          <Calendar className="w-5 h-5 text-coral-direct" />
+          <span className="font-medium text-foreground">Deine Woche</span>
         </div>
         <p className="text-sm text-muted-foreground mb-3">Dein Baby ist jetzt so groß wie eine Avocado!</p>
         <div className="flex gap-2">
-          <span className="bg-coral/20 text-coral px-2 py-1 rounded-full text-xs">🎉 Erste Bewegungen</span>
-          <span className="bg-sage/20 text-sage px-2 py-1 rounded-full text-xs">👶 Geschlecht erkennbar</span>
+          <span className="bg-coral-direct text-white px-3 py-1 rounded-full text-xs">🎉 Erste Bewegungen</span>
+          <span className="bg-muted-direct text-muted-foreground px-3 py-1 rounded-full text-xs">👶 Geschlecht erkennbar</span>
         </div>
       </div>
       
       <div className="space-y-2">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-coral rounded-full" />
-          <span className="text-sm">Personalisierte Tipps</span>
+          <div className="w-2 h-2 bg-coral-direct rounded-full" />
+          <span className="text-sm text-foreground">Personalisierte Tipps</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-sage rounded-full" />
-          <span className="text-sm">Wöchentliche Checkliste</span>
+          <div className="w-2 h-2 bg-muted-foreground rounded-full" />
+          <span className="text-sm text-foreground">Wöchentliche Checkliste</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-lavender rounded-full" />
-          <span className="text-sm">Erinnerungen & Termine</span>
+          <div className="w-2 h-2 bg-muted-foreground rounded-full" />
+          <span className="text-sm text-foreground">Erinnerungen & Termine</span>
         </div>
       </div>
     </div>
@@ -163,37 +169,37 @@ const WeeklyCelebrationVisual = () => {
 
 const ScheduleManagementVisual = () => {
   return (
-    <div className="card-warm p-6 space-y-4">
+    <div className="bg-card card-border-sage rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-3 mb-4">
-        <Target className="w-6 h-6 text-sage" />
-        <span className="font-semibold">Dein Schwangerschaftsplan</span>
+        <Target className="w-6 h-6 text-sage-direct" />
+        <span className="font-semibold text-foreground">Dein Schwangerschaftsplan</span>
       </div>
       
       <div className="space-y-3">
-        <div className="flex items-center gap-3 p-3 bg-sage/10 rounded-lg">
-          <CheckSquare className="w-5 h-5 text-sage" />
+        <div className="flex items-center gap-3 p-3 bg-muted-direct rounded-lg">
+          <CheckSquare className="w-5 h-5 text-green-600" />
           <div className="flex-1">
-            <span className="text-sm font-medium">Erstes Trimester abgeschlossen</span>
+            <span className="text-sm font-medium text-foreground">Erstes Trimester abgeschlossen</span>
             <p className="text-xs text-muted-foreground">12 Wochen erreicht</p>
           </div>
-          <div className="w-6 h-6 bg-sage rounded-full flex items-center justify-center">
+          <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center">
             <span className="text-white text-xs">✓</span>
           </div>
         </div>
         
-        <div className="flex items-center gap-3 p-3 bg-coral/10 rounded-lg">
-          <Calendar className="w-5 h-5 text-coral" />
+        <div className="flex items-center gap-3 p-3 bg-muted-direct rounded-lg">
+          <Calendar className="w-5 h-5 text-coral-direct" />
           <div className="flex-1">
-            <span className="text-sm font-medium">Nächster Arzttermin</span>
+            <span className="text-sm font-medium text-foreground">Nächster Arzttermin</span>
             <p className="text-xs text-muted-foreground">15. Januar 2024</p>
           </div>
-          <Clock className="w-4 h-4 text-coral" />
+          <Clock className="w-4 h-4 text-coral-direct" />
         </div>
         
-        <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+        <div className="flex items-center gap-3 p-3 bg-muted-direct rounded-lg">
           <Heart className="w-5 h-5 text-muted-foreground" />
           <div className="flex-1">
-            <span className="text-sm font-medium">Pränatale Vitamine</span>
+            <span className="text-sm font-medium text-foreground">Pränatale Vitamine</span>
             <p className="text-xs text-muted-foreground">Täglich einnehmen</p>
           </div>
           <div className="w-6 h-6 border-2 border-muted-foreground rounded-full" />

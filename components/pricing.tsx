@@ -92,12 +92,13 @@ const Pricing = () => {
           </TabsTrigger>
         </TabsList>
       </Tabs>
-      <div className="mt-12 max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
+      <div className="mt-12 max-w-(--breakpoint-lg) mx-auto grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className={cn("relative border rounded-xl p-6 bg-background/50", {
-              "border-[2px] border-primary bg-background py-10": plan.isPopular,
+            className={cn("relative rounded-xl p-6 bg-background/50", {
+              "card-border-coral py-10": plan.isPopular,
+              "card-border-sage": !plan.isPopular,
             })}
           >
             {plan.isPopular && (
