@@ -48,7 +48,7 @@ const features = [
 // Visual Components
 const QuestionChatVisual = () => {
   return (
-    <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4 shadow-soft">
+    <div className="bg-card card-border-coral rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-2 mb-4">
         <div className="w-3 h-3 bg-green-500 rounded-full" />
         <span className="text-sm font-medium text-muted-foreground">24/7 verfügbar</span>
@@ -59,16 +59,16 @@ const QuestionChatVisual = () => {
           <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
             <Users className="w-4 h-4 text-muted-foreground" />
           </div>
-          <div className="bg-muted rounded-2xl rounded-tl-sm p-3 max-w-xs">
+          <div className="bg-muted-direct rounded-2xl rounded-tl-sm p-3 max-w-xs">
             <p className="text-sm text-foreground">Ist es normal, dass ich so müde bin?</p>
           </div>
         </div>
         
         <div className="flex items-start gap-3 justify-end">
-          <div className="bg-coral rounded-2xl rounded-tr-sm p-3 max-w-xs">
+          <div className="bg-coral-direct rounded-2xl rounded-tr-sm p-3 max-w-xs">
             <p className="text-sm text-white">Ja, das ist völlig normal! Müdigkeit ist eines der häufigsten Symptome...</p>
           </div>
-          <div className="w-8 h-8 bg-coral rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-coral-direct rounded-full flex items-center justify-center">
             <Heart className="w-4 h-4 text-white" />
           </div>
         </div>
@@ -77,7 +77,7 @@ const QuestionChatVisual = () => {
           <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
             <Baby className="w-4 h-4 text-muted-foreground" />
           </div>
-          <div className="bg-muted rounded-2xl rounded-tl-sm p-3 max-w-xs">
+          <div className="bg-muted-direct rounded-2xl rounded-tl-sm p-3 max-w-xs">
             <p className="text-sm text-foreground">Wann sollte ich zum Arzt gehen?</p>
           </div>
         </div>
@@ -88,15 +88,15 @@ const QuestionChatVisual = () => {
 
 const ScientificKnowledgeVisual = () => {
   return (
-    <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4 shadow-soft">
+    <div className="bg-card card-border-sage rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-3 mb-4">
-        <BookOpen className="w-6 h-6 text-coral" />
+        <BookOpen className="w-6 h-6 text-coral-direct" />
         <span className="font-semibold text-foreground">Wissenschaftliches Wissen</span>
       </div>
       
       <div className="space-y-3">
         <div className="flex items-center gap-3 p-3 rounded-lg">
-          <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-muted-direct rounded-full flex items-center justify-center">
             <Stethoscope className="w-4 h-4 text-muted-foreground" />
           </div>
           <div>
@@ -106,7 +106,7 @@ const ScientificKnowledgeVisual = () => {
         </div>
         
         <div className="flex items-center gap-3 p-3 rounded-lg">
-          <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-muted-direct rounded-full flex items-center justify-center">
             <Heart className="w-4 h-4 text-muted-foreground" />
           </div>
           <div>
@@ -116,7 +116,7 @@ const ScientificKnowledgeVisual = () => {
         </div>
         
         <div className="flex items-center gap-3 p-3 rounded-lg">
-          <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-muted-direct rounded-full flex items-center justify-center">
             <BookOpenCheck className="w-4 h-4 text-muted-foreground" />
           </div>
           <div>
@@ -131,27 +131,27 @@ const ScientificKnowledgeVisual = () => {
 
 const WeeklyCelebrationVisual = () => {
   return (
-    <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4 shadow-soft">
+    <div className="bg-card card-border-coral rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-3 mb-4">
-        <Sparkles className="w-6 h-6 text-coral" />
+        <Sparkles className="w-6 h-6 text-coral-direct" />
         <span className="font-semibold text-foreground">Woche 16 - Zeit zu feiern!</span>
       </div>
       
-      <div className="bg-muted rounded-lg p-4 mb-4">
+      <div className="bg-muted-direct rounded-lg p-4 mb-4">
         <div className="flex items-center gap-2 mb-2">
-          <Calendar className="w-5 h-5 text-coral" />
+          <Calendar className="w-5 h-5 text-coral-direct" />
           <span className="font-medium text-foreground">Deine Woche</span>
         </div>
         <p className="text-sm text-muted-foreground mb-3">Dein Baby ist jetzt so groß wie eine Avocado!</p>
         <div className="flex gap-2">
-          <span className="bg-coral text-white px-3 py-1 rounded-full text-xs">🎉 Erste Bewegungen</span>
-          <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs">👶 Geschlecht erkennbar</span>
+          <span className="bg-coral-direct text-white px-3 py-1 rounded-full text-xs">🎉 Erste Bewegungen</span>
+          <span className="bg-muted-direct text-muted-foreground px-3 py-1 rounded-full text-xs">👶 Geschlecht erkennbar</span>
         </div>
       </div>
       
       <div className="space-y-2">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-coral rounded-full" />
+          <div className="w-2 h-2 bg-coral-direct rounded-full" />
           <span className="text-sm text-foreground">Personalisierte Tipps</span>
         </div>
         <div className="flex items-center gap-2">
@@ -169,14 +169,14 @@ const WeeklyCelebrationVisual = () => {
 
 const ScheduleManagementVisual = () => {
   return (
-    <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4 shadow-soft">
+    <div className="bg-card card-border-sage rounded-xl p-6 space-y-4">
       <div className="flex items-center gap-3 mb-4">
-        <Target className="w-6 h-6 text-sage" />
+        <Target className="w-6 h-6 text-sage-direct" />
         <span className="font-semibold text-foreground">Dein Schwangerschaftsplan</span>
       </div>
       
       <div className="space-y-3">
-        <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+        <div className="flex items-center gap-3 p-3 bg-muted-direct rounded-lg">
           <CheckSquare className="w-5 h-5 text-green-600" />
           <div className="flex-1">
             <span className="text-sm font-medium text-foreground">Erstes Trimester abgeschlossen</span>
@@ -187,16 +187,16 @@ const ScheduleManagementVisual = () => {
           </div>
         </div>
         
-        <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
-          <Calendar className="w-5 h-5 text-coral" />
+        <div className="flex items-center gap-3 p-3 bg-muted-direct rounded-lg">
+          <Calendar className="w-5 h-5 text-coral-direct" />
           <div className="flex-1">
             <span className="text-sm font-medium text-foreground">Nächster Arzttermin</span>
             <p className="text-xs text-muted-foreground">15. Januar 2024</p>
           </div>
-          <Clock className="w-4 h-4 text-coral" />
+          <Clock className="w-4 h-4 text-coral-direct" />
         </div>
         
-        <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+        <div className="flex items-center gap-3 p-3 bg-muted-direct rounded-lg">
           <Heart className="w-5 h-5 text-muted-foreground" />
           <div className="flex-1">
             <span className="text-sm font-medium text-foreground">Pränatale Vitamine</span>

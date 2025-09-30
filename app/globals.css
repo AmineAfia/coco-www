@@ -174,7 +174,7 @@
 
 @layer components {
 	/* Typography System */
-	.font-inter {
+		.font-inter {
 		font-family: "Inter", system-ui, -apple-system, sans-serif;
 	}
 
@@ -183,7 +183,7 @@
 	}
 
 	/* Custom Color Utilities */
-	.bg-coral-gradient {
+		.bg-coral-gradient {
 		background-color: hsl(var(--coral));
 	}
 
@@ -200,7 +200,7 @@
 	}
 
 	/* Soft Shadow System */
-	.shadow-soft {
+		.shadow-soft {
 		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
 			hsl(var(--sage) / 0.1);
 	}
@@ -211,7 +211,7 @@
 	}
 
 	/* Button Enhancements */
-	.btn-primary {
+		.btn-primary {
 		@apply text-white transition-all duration-300 hover:scale-105;
 		background-color: hsl(var(--coral));
 		box-shadow: 0 2px 8px -2px hsl(var(--coral) / 0.3);
@@ -232,7 +232,7 @@
 	}
 
 	/* Card Styling */
-	.card-warm {
+		.card-warm {
 		@apply rounded-xl;
 		background-color: hsl(var(--card));
 		border: 1px solid hsl(var(--border) / 0.5);
@@ -240,21 +240,49 @@
 			hsl(var(--sage) / 0.1);
 	}
 
+	/* Enhanced Card Border System */
+		.card-border-coral {
+		border: 1px solid hsl(var(--coral) / 0.2);
+		box-shadow: 0 0 0 1px hsl(var(--coral) / 0.1), 0 4px 20px -4px
+			hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+	}
+
+	.card-border-sage {
+		border: 1px solid hsl(var(--sage) / 0.2);
+		box-shadow: 0 0 0 1px hsl(var(--sage) / 0.1), 0 4px 20px -4px
+			hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+	}
+
+	.card-border-warm {
+		border: 1px solid hsl(var(--border) / 0.1);
+		box-shadow: 0 0 0 1px hsl(var(--coral) / 0.05), 0 4px 20px -4px
+			hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+	}
+
+	.card-border-gradient {
+		border: 1px solid transparent;
+		background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+			linear-gradient(135deg, hsl(var(--coral) / 0.3), hsl(var(--sage) / 0.3))
+			border-box;
+		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+			hsl(var(--sage) / 0.1);
+	}
+
 	/* Enhanced Focus States */
-	.focus-warm {
+		.focus-warm {
 		@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
 	}
 	.focus-warm:focus-visible {
-		ring-color: hsl(var(--coral) / 0.5);
+		--tw-ring-color: hsl(var(--coral) / 0.5);
 	}
 
 	/* Smooth Transitions */
-	.transition-warm {
+		.transition-warm {
 		@apply transition-all duration-300 ease-out;
 	}
 
 	/* Text Gradients */
-	.text-coral-gradient {
+		.text-coral-gradient {
 		background: linear-gradient(
 			135deg,
 			hsl(var(--coral)) 0%,
@@ -266,11 +294,36 @@
 	}
 
 	/* Enhanced Hover Effects */
-	.hover-lift {
+		.hover-lift {
 		@apply hover:scale-105 transition-all duration-300;
 	}
 	.hover-lift:hover {
 		box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
 			hsl(var(--sage) / 0.15);
+	}
+
+	/* Direct color classes for feature cards - Tailwind 4 compatibility */
+		.bg-coral-direct {
+		background-color: hsl(var(--coral)) !important;
+	}
+
+	.text-coral-direct {
+		color: hsl(var(--coral)) !important;
+	}
+
+	.bg-sage-direct {
+		background-color: hsl(var(--sage)) !important;
+	}
+
+	.text-sage-direct {
+		color: hsl(var(--sage)) !important;
+	}
+
+	.bg-muted-direct {
+		background-color: hsl(var(--muted)) !important;
+	}
+
+	.text-muted-direct {
+		color: hsl(var(--muted-foreground)) !important;
 	}
 }

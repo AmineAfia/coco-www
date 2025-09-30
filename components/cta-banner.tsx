@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export default function CTABanner() {
   return (
     <div className="px-4 xs:px-6 sm:px-8">
-      <div className="relative overflow-hidden my-16 xs:my-20 sm:my-24 md:my-32 w-full bg-card text-foreground max-w-(--breakpoint-lg) mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 border border-border/50 shadow-soft-lg hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 group">
+      <div className="relative overflow-hidden my-16 xs:my-20 sm:my-24 md:my-32 w-full bg-card text-foreground max-w-(--breakpoint-lg) mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 card-border-gradient hover:scale-[1.02] transition-all duration-300 group">
         {/* Warm gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-br from-coral/10 to-sage/10 rounded-2xl" />
         {/* Coral accent line */}
