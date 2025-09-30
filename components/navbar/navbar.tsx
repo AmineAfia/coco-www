@@ -8,7 +8,15 @@ const Navbar = () => {
         <Logo />
 
         {/* Desktop Menu */}
-        {/* <NavMenu className="hidden md:block" /> */}
+        <div className="hidden md:flex items-center gap-8">
+          <a 
+            href="#features" 
+            className="text-foreground/80 hover:text-foreground transition-colors duration-200 focus-warm"
+            aria-label="Zu den Features scrollen"
+          >
+            Features
+          </a>
+        </div>
 
         <div className="flex items-center gap-4">
           {/* <ThemeToggle />
