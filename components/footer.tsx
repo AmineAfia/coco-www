@@ -39,11 +39,11 @@ const Footer = () => {
   return (
     <footer className="mt-40 bg-warm-gradient border-t border-border/50">
       <div className="max-w-screen-xl mx-auto">
-        <div className="py-16 xs:py-20 sm:py-24 px-6 xl:px-0">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className="py-6 xs:py-8 sm:py-10 px-6 xl:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
             {/* Brand Section */}
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-3">
                 <div className="w-12 h-12 relative">
                   <Image
                     src="/coco-logo.png"
@@ -66,11 +66,11 @@ const Footer = () => {
 
             {/* Newsletter & Contact */}
             <div className="lg:col-span-1">
-              <h4 className="text-lg font-semibold text-foreground mb-6">Bleib auf dem Laufenden</h4>
-              <p className="text-muted-foreground mb-6">
+              <h4 className="text-lg font-semibold text-foreground mb-3">Bleib auf dem Laufenden</h4>
+              <p className="text-muted-foreground mb-3">
                 Erhalte wöchentliche Schwangerschaftstipps und Updates direkt in dein WhatsApp.
               </p>
-              <form className="space-y-4">
+              <form className="space-y-2">
                 <Input 
                   type="email" 
                   placeholder="Deine E-Mail-Adresse" 
@@ -90,7 +90,7 @@ const Footer = () => {
 
         <Separator className="bg-border/50" />
         
-        <div className="py-8 flex flex-col sm:flex-row items-center justify-between gap-6 px-6 xl:px-0">
+        <div className="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 px-6 xl:px-0">
           {/* Copyright */}
           <div className="text-center sm:text-left">
             <p className="text-muted-foreground">
