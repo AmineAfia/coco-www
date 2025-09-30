@@ -2,6 +2,73 @@
 
 @import "tailwindcss";
 
+/* Production-safe CSS variables - defined before @theme for maximum compatibility */
+:root {
+  /* Pregnancy Brand Color System - Production Safe */
+  --background: 45 20% 95%;
+  --foreground: 0 0% 17%;
+  --card: 45 25% 92%;
+  --card-foreground: 0 0% 17%;
+  --popover: 45 20% 95%;
+  --popover-foreground: 0 0% 17%;
+  --primary: 15 65% 60%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 45 15% 88%;
+  --secondary-foreground: 0 0% 17%;
+  --muted: 45 15% 88%;
+  --muted-foreground: 0 0% 35%;
+  --accent: 160 25% 45%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 65% 55%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 45 15% 85%;
+  --input: 45 15% 85%;
+  --ring: 15 65% 60%;
+  
+  /* Pregnancy Brand Specific Colors */
+  --coral: 15 65% 60%;
+  --sage: 160 25% 45%;
+  --dusty-rose: 0 25% 70%;
+  --lavender: 280 20% 65%;
+  --turquoise: 180 45% 45%;
+  --terracotta: 20 50% 55%;
+  
+  --chart-1: 15 65% 60%;
+  --chart-2: 160 25% 45%;
+  --chart-3: 0 25% 70%;
+  --chart-4: 280 20% 65%;
+  --chart-5: 20 50% 55%;
+  
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 45 15% 8%;
+  --foreground: 45 20% 95%;
+  --card: 45 15% 12%;
+  --card-foreground: 45 20% 95%;
+  --popover: 45 15% 8%;
+  --popover-foreground: 45 20% 95%;
+  --primary: 15 65% 65%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 45 15% 15%;
+  --secondary-foreground: 45 20% 95%;
+  --muted: 45 15% 15%;
+  --muted-foreground: 45 10% 65%;
+  --accent: 160 25% 50%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 65% 60%;
+  --destructive-foreground: 0 0% 9%;
+  --border: 45 15% 20%;
+  --input: 45 15% 20%;
+  --ring: 15 65% 65%;
+  --chart-1: 15 65% 65%;
+  --chart-2: 160 25% 50%;
+  --chart-3: 0 25% 75%;
+  --chart-4: 280 20% 70%;
+  --chart-5: 20 50% 60%;
+}
+
 @theme {
   /* Font families */
   --font-family-inter: "Inter", system-ui, sans-serif;
@@ -53,71 +120,6 @@
 }
 
 @layer base {
-	:root {
-		/* Legacy CSS variables for compatibility */
-		--background: 45 20% 95%;
-		--foreground: 0 0% 17%;
-		--card: 45 25% 92%;
-		--card-foreground: 0 0% 17%;
-		--popover: 45 20% 95%;
-		--popover-foreground: 0 0% 17%;
-		--primary: 15 65% 60%;
-		--primary-foreground: 0 0% 98%;
-		--secondary: 45 15% 88%;
-		--secondary-foreground: 0 0% 17%;
-		--muted: 45 15% 88%;
-		--muted-foreground: 0 0% 35%;
-		--accent: 160 25% 45%;
-		--accent-foreground: 0 0% 98%;
-		--destructive: 0 65% 55%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 45 15% 85%;
-		--input: 45 15% 85%;
-		--ring: 15 65% 60%;
-		--coral: 15 65% 60%;
-		--sage: 160 25% 45%;
-		--dusty-rose: 0 25% 70%;
-		--lavender: 280 20% 65%;
-		--turquoise: 180 45% 45%;
-		--terracotta: 20 50% 55%;
-		--chart-1: 15 65% 60%;
-		--chart-2: 160 25% 45%;
-		--chart-3: 0 25% 70%;
-		--chart-4: 280 20% 65%;
-		--chart-5: 20 50% 55%;
-		--radius: 0.75rem;
-	}
-	.dark {
-		--background: 45 15% 8%;
-		--foreground: 45 20% 95%;
-		--card: 45 15% 12%;
-		--card-foreground: 45 20% 95%;
-		--popover: 45 15% 8%;
-		--popover-foreground: 45 20% 95%;
-		--primary: 15 65% 65%;
-		--primary-foreground: 0 0% 9%;
-		--secondary: 45 15% 15%;
-		--secondary-foreground: 45 20% 95%;
-		--muted: 45 15% 15%;
-		--muted-foreground: 45 10% 65%;
-		--accent: 160 25% 50%;
-		--accent-foreground: 0 0% 9%;
-		--destructive: 0 65% 60%;
-		--destructive-foreground: 0 0% 9%;
-		--border: 45 15% 20%;
-		--input: 45 15% 20%;
-		--ring: 15 65% 65%;
-		--chart-1: 15 65% 65%;
-		--chart-2: 160 25% 50%;
-		--chart-3: 0 25% 75%;
-		--chart-4: 280 20% 70%;
-		--chart-5: 20 50% 60%;
-	}
-}
-
-
-
-@layer base {
 	* {
 		border-color: hsl(var(--border));
 		outline-color: hsl(var(--ring) / 0.5);
@@ -138,7 +140,7 @@
 			sans-serif;
 	}
 	
-	/* Force background colors for common elements */
+	/* Force background colors for common elements - Production Safe */
 	.bg-background {
 		background-color: hsl(var(--background)) !important;
 	}
@@ -149,6 +151,24 @@
 	
 	.bg-muted {
 		background-color: hsl(var(--muted)) !important;
+	}
+	
+	/* Production-safe background color fallbacks */
+	body, html {
+		background-color: hsl(var(--background)) !important;
+	}
+	
+	/* Ensure all Tailwind background utilities work in production */
+	.bg-white {
+		background-color: #ffffff !important;
+	}
+	
+	.bg-gray-50 {
+		background-color: #f9fafb !important;
+	}
+	
+	.bg-gray-100 {
+		background-color: #f3f4f6 !important;
 	}
 }
 

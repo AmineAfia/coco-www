@@ -1,0 +1,57 @@
+/* Production Fallback CSS for Background Colors */
+/* This file ensures background colors work in all production environments */
+
+/* Critical background color fallbacks */
+html {
+  background-color: hsl(45 20% 95%) !important;
+  background: linear-gradient(135deg, hsl(45 20% 95%) 0%, hsl(45 25% 92%) 100%) !important;
+}
+
+body {
+  background-color: hsl(45 20% 95%) !important;
+  background: linear-gradient(135deg, hsl(45 20% 95%) 0%, hsl(45 25% 92%) 100%) !important;
+}
+
+/* Feature card backgrounds */
+.card-warm {
+  background-color: hsl(45 25% 92%) !important;
+  border: 1px solid hsl(45 15% 85%) !important;
+  box-shadow: 0 4px 20px -4px hsl(15 65% 60% / 0.1), 0 2px 8px -2px hsl(160 25% 45% / 0.1) !important;
+}
+
+/* Button backgrounds */
+.bg-coral-gradient {
+  background: linear-gradient(135deg, hsl(15 65% 60%) 0%, hsl(20 50% 55%) 100%) !important;
+}
+
+.bg-sage-gradient {
+  background: linear-gradient(135deg, hsl(160 25% 45%) 0%, hsl(180 45% 45%) 100%) !important;
+}
+
+/* Ensure all Tailwind background utilities work */
+.bg-background {
+  background-color: hsl(45 20% 95%) !important;
+}
+
+.bg-card {
+  background-color: hsl(45 25% 92%) !important;
+}
+
+.bg-muted {
+  background-color: hsl(45 15% 88%) !important;
+}
+
+/* Production-safe color variables */
+:root {
+  --background: 45 20% 95%;
+  --foreground: 0 0% 17%;
+  --card: 45 25% 92%;
+  --card-foreground: 0 0% 17%;
+  --muted: 45 15% 88%;
+  --muted-foreground: 0 0% 35%;
+  --border: 45 15% 85%;
+  --coral: 15 65% 60%;
+  --sage: 160 25% 45%;
+  --terracotta: 20 50% 55%;
+  --turquoise: 180 45% 45%;
+}
