@@ -205,14 +205,14 @@ const ScheduleManagementVisual = () => {
 
 const Features = () => {
   return (
-    <section id="features" className="w-full py-16 xs:py-20 sm:py-24 md:py-32 px-4 xs:px-6 sm:px-8" aria-labelledby="features-heading">
+    <section id="features" className="w-full pt-8 xs:pt-12 sm:pt-16 md:pt-20 pb-16 xs:pb-20 sm:pb-24 md:pb-32 px-4 xs:px-6 sm:px-8" aria-labelledby="features-heading">
       <div className="max-w-7xl mx-auto">
         {/* <h2 id="features-heading" className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-playfair font-semibold text-center text-foreground mb-4">
           Deine Schwangerschaftsbegleitung
         </h2> */}
-        <p className="text-center text-muted-foreground text-lg xs:text-xl max-w-3xl mx-auto mb-16">
+        {/* <p className="text-center text-muted-foreground text-lg xs:text-xl max-w-3xl mx-auto mb-16">
           Alles was du brauchst, um deine Schwangerschaft optimal zu begleiten
-        </p>
+        </p> */}
         
         <ul className="space-y-24 xs:space-y-32" aria-label="Schwangerschafts-Features">
           {features.map((feature, index) => (

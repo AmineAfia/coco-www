@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="min-h-[calc(100vh-7rem)] flex flex-col items-center py-16 xs:py-20 sm:py-24 md:py-32 px-4 xs:px-6 sm:px-8 bg-warm-gradient">
+    <div className="flex flex-col items-center py-16 xs:py-20 sm:py-24 md:py-32 px-4 xs:px-6 sm:px-8 bg-warm-gradient">
       <div className="flex items-center justify-center w-full">
         <div className="text-center max-w-5xl">
           {/* <Badge className="bg-primary rounded-full py-1 border-none">
@@ -15,7 +15,7 @@ const Hero = () => {
           <p className="mt-6 xs:mt-8 sm:mt-10 max-w-[70ch] mx-auto text-base xs:text-lg sm:text-xl text-muted-foreground font-inter leading-relaxed">
             Die Unterstützung, die du brauchst. Antworte auf Fragen, Empfehlungen, plannung hilfe und mehr. 
           </p>
-          <div className="mt-12 xs:mt-14 sm:mt-16 md:mt-20 flex flex-col sm:flex-row items-center sm:justify-center gap-4 xs:gap-6">
+          <div className="mt-12 xs:mt-14 sm:mt-16 md:mt-20 mb-8 xs:mb-10 sm:mb-12 md:mb-16 flex flex-col sm:flex-row items-center sm:justify-center gap-4 xs:gap-6">
             <Button
               size="lg"
               className="w-full sm:w-auto btn-primary rounded-full text-base xs:text-lg px-6 xs:px-8 py-3 xs:py-4 font-medium"
