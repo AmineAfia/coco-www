@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 export default function CTABanner() {
   return (
     <div className="px-4 xs:px-6 sm:px-8">
-      <div className="relative overflow-hidden my-16 xs:my-20 sm:my-24 md:my-32 w-full bg-card text-foreground max-w-screen-lg mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 border border-border/50 shadow-soft-lg hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 group">
+      <div className="relative overflow-hidden my-16 xs:my-20 sm:my-24 md:my-32 w-full bg-card text-foreground max-w-(--breakpoint-lg) mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 border border-border/50 shadow-soft-lg hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 group">
         {/* Warm gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-coral/10 to-sage/10 rounded-2xl" />
+        <div className="absolute inset-0 bg-linear-to-br from-coral/10 to-sage/10 rounded-2xl" />
         {/* Coral accent line */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-coral-gradient rounded-full" />
         <AnimatedGridPattern
@@ -16,7 +16,7 @@ export default function CTABanner() {
           maxOpacity={0.05}
           duration={3}
           className={cn(
-            "[mask-image:radial-gradient(400px_circle_at_right,white,rgba(255,255,255,0.3),transparent)]",
+            "mask-[radial-gradient(400px_circle_at_right,white,rgba(255,255,255,0.3),transparent)]",
             "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
           )}
         />
@@ -25,7 +25,7 @@ export default function CTABanner() {
           maxOpacity={0.05}
           duration={3}
           className={cn(
-            "[mask-image:radial-gradient(400px_circle_at_top_left,white,rgba(255,255,255,0.3),transparent)]",
+            "mask-[radial-gradient(400px_circle_at_top_left,white,rgba(255,255,255,0.3),transparent)]",
             "inset-x-0 inset-y-0 h-[200%] skew-y-12"
           )}
         />
@@ -55,7 +55,7 @@ export default function CTABanner() {
               rel="noopener noreferrer"
             >
               Jetzt kostenlos starten
-              <MessageCircle className="!h-4 !w-4 xs:!h-5 xs:!w-5 ml-2 group-hover:rotate-12 transition-transform duration-300" />
+              <MessageCircle className="h-4! w-4! xs:!h-5 xs:!w-5 ml-2 group-hover:rotate-12 transition-transform duration-300" />
             </a>
           </Button>
           <Button
@@ -66,7 +66,7 @@ export default function CTABanner() {
           >
             <a href="#features">
               Mehr über Coco erfahren
-              <Heart className="!h-4 !w-4 xs:!h-5 xs:!w-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
+              <Heart className="h-4! w-4! xs:!h-5 xs:!w-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
             </a>
           </Button>
         </div>

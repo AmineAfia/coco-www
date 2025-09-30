@@ -95,7 +95,7 @@ const ScientificKnowledgeVisual = () => {
       </div>
       
       <div className="space-y-3">
-        <div className="bg-gradient-to-r from-sage/10 to-turquoise/10 rounded-lg p-4 border-l-4 border-sage">
+        <div className="bg-linear-to-r from-sage/10 to-turquoise/10 rounded-lg p-4 border-l-4 border-sage">
           <div className="flex items-center gap-2 mb-2">
             <Stethoscope className="w-4 h-4 text-sage" />
             <span className="text-sm font-medium">Entwicklung Woche 12</span>
@@ -103,7 +103,7 @@ const ScientificKnowledgeVisual = () => {
           <p className="text-sm text-muted-foreground">Fötale Organe beginnen sich zu entwickeln...</p>
         </div>
         
-        <div className="bg-gradient-to-r from-coral/10 to-terracotta/10 rounded-lg p-4 border-l-4 border-coral">
+        <div className="bg-linear-to-r from-coral/10 to-terracotta/10 rounded-lg p-4 border-l-4 border-coral">
           <div className="flex items-center gap-2 mb-2">
             <Heart className="w-4 h-4 text-coral" />
             <span className="text-sm font-medium">Ernährung & Vitamine</span>
@@ -111,7 +111,7 @@ const ScientificKnowledgeVisual = () => {
           <p className="text-sm text-muted-foreground">Folsäure, Eisen und Omega-3 sind essentiell...</p>
         </div>
         
-        <div className="bg-gradient-to-r from-lavender/10 to-dusty-rose/10 rounded-lg p-4 border-l-4 border-lavender">
+        <div className="bg-linear-to-r from-lavender/10 to-dusty-rose/10 rounded-lg p-4 border-l-4 border-lavender">
           <div className="flex items-center gap-2 mb-2">
             <BookOpenCheck className="w-4 h-4 text-lavender" />
             <span className="text-sm font-medium">Studien & Forschung</span>
@@ -131,7 +131,7 @@ const WeeklyCelebrationVisual = () => {
         <span className="font-semibold">Woche 16 - Zeit zu feiern!</span>
       </div>
       
-      <div className="bg-gradient-to-br from-coral/20 to-terracotta/20 rounded-lg p-4 mb-4">
+      <div className="bg-linear-to-br from-coral/20 to-terracotta/20 rounded-lg p-4 mb-4">
         <div className="flex items-center gap-2 mb-2">
           <Calendar className="w-5 h-5 text-coral" />
           <span className="font-medium">Deine Woche</span>

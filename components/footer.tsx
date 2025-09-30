@@ -15,7 +15,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="mt-40 bg-warm-gradient border-t border-border/50">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-(--breakpoint-xl) mx-auto">
         <div className="py-6 xs:py-8 sm:py-10 px-6 xl:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
             {/* Brand Section */}

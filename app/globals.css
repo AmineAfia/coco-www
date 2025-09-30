@@ -1,8 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Font families */
+  --font-family-inter: "Inter", system-ui, sans-serif;
+  --font-family-playfair: "Playfair Display", Georgia, serif;
+  
+  /* Custom screens */
+  --breakpoint-xs: 375px;
+  
+  /* Custom animations */
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+}
 
 @layer base {
 	:root {
@@ -93,13 +104,20 @@
 
 @layer base {
 	* {
-		@apply border-border outline-ring/50;
+		border-color: hsl(var(--border));
+		outline-color: hsl(var(--ring) / 0.5);
 	}
 	html {
 		@apply scroll-smooth scroll-pt-12;
 	}
 	body {
-		@apply text-foreground font-inter antialiased bg-warm-gradient;
+		@apply antialiased;
+		color: hsl(var(--foreground));
+		background: linear-gradient(
+			135deg,
+			hsl(var(--background)) 0%,
+			hsl(45 25% 92%) 100%
+		);
 		font-family: var(--font-inter), "Inter", system-ui, -apple-system,
 			sans-serif;
 	}
@@ -153,21 +171,50 @@
 
 	/* Button Enhancements */
 	.btn-primary {
-		@apply bg-coral-gradient text-white shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:scale-105;
+		@apply text-white transition-all duration-300 hover:scale-105;
+		background: linear-gradient(
+			135deg,
+			hsl(var(--coral)) 0%,
+			hsl(var(--terracotta)) 100%
+		);
+		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+			hsl(var(--sage) / 0.1);
+	}
+	.btn-primary:hover {
+		box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
+			hsl(var(--sage) / 0.15);
 	}
 
 	.btn-secondary {
-		@apply bg-sage-gradient text-white shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:scale-105;
+		@apply text-white transition-all duration-300 hover:scale-105;
+		background: linear-gradient(
+			135deg,
+			hsl(var(--sage)) 0%,
+			hsl(var(--turquoise)) 100%
+		);
+		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+			hsl(var(--sage) / 0.1);
+	}
+	.btn-secondary:hover {
+		box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
+			hsl(var(--sage) / 0.15);
 	}
 
 	/* Card Styling */
 	.card-warm {
-		@apply bg-card border border-border/50 shadow-soft rounded-xl;
+		@apply rounded-xl;
+		background-color: hsl(var(--card));
+		border: 1px solid hsl(var(--border) / 0.5);
+		box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+			hsl(var(--sage) / 0.1);
 	}
 
 	/* Enhanced Focus States */
 	.focus-warm {
-		@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral/50 focus-visible:ring-offset-2;
+		@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+	}
+	.focus-warm:focus-visible {
+		ring-color: hsl(var(--coral) / 0.5);
 	}
 
 	/* Smooth Transitions */
@@ -189,6 +236,10 @@
 
 	/* Enhanced Hover Effects */
 	.hover-lift {
-		@apply hover:scale-105 hover:shadow-soft-lg transition-all duration-300;
+		@apply hover:scale-105 transition-all duration-300;
+	}
+	.hover-lift:hover {
+		box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
+			hsl(var(--sage) / 0.15);
 	}
 }
