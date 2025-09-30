@@ -174,166 +174,203 @@
 
 @layer components {
 	/* Typography System */
-			.font-inter {
-			font-family: "Inter", system-ui, -apple-system, sans-serif;
-		}
+				.font-inter {
+				font-family: "Inter", system-ui, -apple-system, sans-serif;
+			}
 
-		.font-playfair {
-			font-family: "Playfair Display", Georgia, serif;
-		}
+			.font-playfair {
+				font-family: "Playfair Display", Georgia, serif;
+			}
 
-		/* Custom Color Utilities */
-			.bg-coral-gradient {
-			background-color: hsl(var(--coral));
-		}
+			/* Custom Color Utilities */
+				.bg-coral-gradient {
+				background-color: hsl(var(--coral));
+			}
 
-		.bg-sage-gradient {
-			background-color: hsl(var(--sage));
-		}
+			.bg-sage-gradient {
+				background-color: hsl(var(--sage));
+			}
 
-		.bg-warm-gradient {
-			background: linear-gradient(
-				135deg,
-				hsl(var(--background)) 0%,
-				hsl(45 25% 92%) 100%
-			);
-		}
+			.bg-warm-gradient {
+				background: linear-gradient(
+					135deg,
+					hsl(var(--background)) 0%,
+					hsl(45 25% 92%) 100%
+				);
+			}
 
-		/* Soft Shadow System */
-			.shadow-soft {
-			box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
-				hsl(var(--sage) / 0.1);
-		}
+			/* Soft Shadow System */
+				.shadow-soft {
+				box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+					hsl(var(--sage) / 0.1);
+			}
 
-		.shadow-soft-lg {
-			box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
-				hsl(var(--sage) / 0.15);
-		}
+			.shadow-soft-lg {
+				box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
+					hsl(var(--sage) / 0.15);
+			}
 
-		/* Button Enhancements */
-			.btn-primary {
-			@apply text-white transition-all duration-300 hover:scale-105;
-			background-color: hsl(var(--coral));
-			box-shadow: 0 2px 8px -2px hsl(var(--coral) / 0.3);
-		}
-		.btn-primary:hover {
-			background-color: hsl(var(--coral) / 0.9);
-			box-shadow: 0 4px 16px -4px hsl(var(--coral) / 0.4);
-		}
+			/* Button Enhancements */
+				.btn-primary {
+				@apply text-white transition-all duration-300 hover:scale-105;
+				background-color: hsl(var(--coral));
+				box-shadow: 0 2px 8px -2px hsl(var(--coral) / 0.3);
+			}
+			.btn-primary:hover {
+				background-color: hsl(var(--coral) / 0.9);
+				box-shadow: 0 4px 16px -4px hsl(var(--coral) / 0.4);
+			}
 
-		.btn-secondary {
-			@apply text-white transition-all duration-300 hover:scale-105;
-			background-color: hsl(var(--sage));
-			box-shadow: 0 2px 8px -2px hsl(var(--sage) / 0.3);
-		}
-		.btn-secondary:hover {
-			background-color: hsl(var(--sage) / 0.9);
-			box-shadow: 0 4px 16px -4px hsl(var(--sage) / 0.4);
-		}
+			.btn-secondary {
+				@apply text-white transition-all duration-300 hover:scale-105;
+				background-color: hsl(var(--sage));
+				box-shadow: 0 2px 8px -2px hsl(var(--sage) / 0.3);
+			}
+			.btn-secondary:hover {
+				background-color: hsl(var(--sage) / 0.9);
+				box-shadow: 0 4px 16px -4px hsl(var(--sage) / 0.4);
+			}
 
-		/* Card Styling */
-			.card-warm {
-			@apply rounded-xl;
-			background-color: hsl(var(--card));
-			border: 1px solid hsl(var(--border) / 0.5);
-			box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
-				hsl(var(--sage) / 0.1);
-		}
+			/* Card Styling */
+				.card-warm {
+				@apply rounded-xl;
+				background-color: hsl(var(--card));
+				border: 1px solid hsl(var(--border) / 0.5);
+				box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+					hsl(var(--sage) / 0.1);
+			}
 
-		/* Enhanced Card Border System */
-			.card-border-coral {
-			border: 1px solid hsl(var(--coral) / 0.2);
-			box-shadow: 0 0 0 1px hsl(var(--coral) / 0.1), 0 4px 20px -4px
-				hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
-		}
+			/* Enhanced Card Border System */
+				.card-border-coral {
+				border: 1px solid hsl(var(--coral) / 0.2);
+				box-shadow: 0 0 0 1px hsl(var(--coral) / 0.1), 0 4px 20px -4px
+					hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+			}
 
-		.card-border-sage {
-			border: 1px solid hsl(var(--sage) / 0.2);
-			box-shadow: 0 0 0 1px hsl(var(--sage) / 0.1), 0 4px 20px -4px
-				hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
-		}
+			.card-border-sage {
+				border: 1px solid hsl(var(--sage) / 0.2);
+				box-shadow: 0 0 0 1px hsl(var(--sage) / 0.1), 0 4px 20px -4px
+					hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+			}
 
-		.card-border-warm {
-			border: 1px solid hsl(var(--border) / 0.1);
-			box-shadow: 0 0 0 1px hsl(var(--coral) / 0.05), 0 4px 20px -4px
-				hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
-		}
+			.card-border-warm {
+				border: 1px solid hsl(var(--border) / 0.1);
+				box-shadow: 0 0 0 1px hsl(var(--coral) / 0.05), 0 4px 20px -4px
+					hsl(var(--coral) / 0.1), 0 2px 8px -2px hsl(var(--sage) / 0.1);
+			}
 
-		.card-border-gradient {
-			border: 1px solid transparent;
-			background: linear-gradient(hsl(var(--card)), hsl(var(--card)))
-				padding-box,
-				linear-gradient(135deg, hsl(var(--coral) / 0.3), hsl(var(--sage) / 0.3))
-				border-box;
-			box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
-				hsl(var(--sage) / 0.1);
-		}
+			.card-border-gradient {
+				border: 1px solid transparent;
+				background: linear-gradient(hsl(var(--card)), hsl(var(--card)))
+					padding-box,
+					linear-gradient(
+						135deg,
+						hsl(var(--coral) / 0.3),
+						hsl(var(--sage) / 0.3)
+					)
+					border-box;
+				box-shadow: 0 4px 20px -4px hsl(var(--coral) / 0.1), 0 2px 8px -2px
+					hsl(var(--sage) / 0.1);
+			}
 
-		/* Enhanced Focus States */
-			.focus-warm {
-			@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-		}
-		.focus-warm:focus-visible {
-			--tw-ring-color: hsl(var(--coral) / 0.5);
-		}
+			/* Enhanced Focus States */
+				.focus-warm {
+				@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+			}
+			.focus-warm:focus-visible {
+				--tw-ring-color: hsl(var(--coral) / 0.5);
+			}
 
-		/* Smooth Transitions */
-			.transition-warm {
-			@apply transition-all duration-300 ease-out;
-		}
+			/* Smooth Transitions */
+				.transition-warm {
+				@apply transition-all duration-300 ease-out;
+			}
 
-		/* Text Gradients */
-			.text-coral-gradient {
-			background: linear-gradient(
-				135deg,
-				hsl(var(--coral)) 0%,
-				hsl(var(--terracotta)) 100%
-			);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
+			/* Text Gradients */
+				.text-coral-gradient {
+				background: linear-gradient(
+					135deg,
+					hsl(var(--coral)) 0%,
+					hsl(var(--terracotta)) 100%
+				);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
 
-		/* Enhanced Hover Effects */
-			.hover-lift {
-			@apply hover:scale-105 transition-all duration-300;
-		}
-		.hover-lift:hover {
-			box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
-				hsl(var(--sage) / 0.15);
-		}
+			/* Enhanced Hover Effects */
+				.hover-lift {
+				@apply hover:scale-105 transition-all duration-300;
+			}
+			.hover-lift:hover {
+				box-shadow: 0 8px 40px -8px hsl(var(--coral) / 0.15), 0 4px 16px -4px
+					hsl(var(--sage) / 0.15);
+			}
 
-		/* Direct color classes for feature cards - Tailwind 4 compatibility */
-			.bg-coral-direct {
-			background-color: hsl(var(--coral)) !important;
-		}
+			/* Direct color classes for feature cards - Tailwind 4 compatibility */
+				.bg-coral-direct {
+				background-color: hsl(var(--coral)) !important;
+			}
 
-		.text-coral-direct {
-			color: hsl(var(--coral)) !important;
-		}
+			.text-coral-direct {
+				color: hsl(var(--coral)) !important;
+			}
 
-		.bg-sage-direct {
-			background-color: hsl(var(--sage)) !important;
-		}
+			.bg-sage-direct {
+				background-color: hsl(var(--sage)) !important;
+			}
 
-		.text-sage-direct {
-			color: hsl(var(--sage)) !important;
-		}
+			.text-sage-direct {
+				color: hsl(var(--sage)) !important;
+			}
 
-		.bg-muted-direct {
-			background-color: hsl(var(--muted)) !important;
-		}
+			.bg-muted-direct {
+				background-color: hsl(var(--muted)) !important;
+			}
 
-		.text-muted-direct {
-			color: hsl(var(--muted-foreground)) !important;
-		}
+			.text-muted-direct {
+				color: hsl(var(--muted-foreground)) !important;
+			}
 
-		/* Footer border and hover classes */
-			.border-coral-direct {
-			border-color: hsl(var(--coral) / 0.2) !important;
-		}
+			/* Footer border and hover classes */
+				.border-coral-direct {
+				border-color: hsl(var(--coral) / 0.2) !important;
+			}
 
-		.hover-text-coral-direct:hover {
-			color: hsl(var(--coral)) !important;
-		}
+			.hover-text-coral-direct:hover {
+				color: hsl(var(--coral)) !important;
+			}
+
+			/* CTA Banner color and gradient classes */
+				.bg-gradient-coral-sage {
+				background: linear-gradient(
+					135deg,
+					hsl(var(--coral) / 0.1),
+					hsl(var(--sage) / 0.1)
+				) !important;
+			}
+
+			.text-coral-direct {
+				color: hsl(var(--coral)) !important;
+			}
+
+			.text-sage-direct {
+				color: hsl(var(--sage)) !important;
+			}
+
+			.hover-text-coral-90:hover {
+				color: hsl(var(--coral) / 0.9) !important;
+			}
+
+			.border-coral-30 {
+				border-color: hsl(var(--coral) / 0.3) !important;
+			}
+
+			.hover-bg-coral-5:hover {
+				background-color: hsl(var(--coral) / 0.05) !important;
+			}
+
+			.hover-border-coral-50:hover {
+				border-color: hsl(var(--coral) / 0.5) !important;
+			}
 }

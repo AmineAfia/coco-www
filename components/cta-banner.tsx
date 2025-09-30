@@ -8,9 +8,9 @@ export default function CTABanner() {
     <div className="px-4 xs:px-6 sm:px-8">
       <div className="relative overflow-hidden my-16 xs:my-20 sm:my-24 md:my-32 w-full bg-card text-foreground max-w-(--breakpoint-lg) mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 card-border-gradient hover:scale-[1.02] transition-all duration-300 group">
         {/* Warm gradient overlay */}
-        <div className="absolute inset-0 bg-linear-to-br from-coral/10 to-sage/10 rounded-2xl" />
+        <div className="absolute inset-0 bg-gradient-coral-sage rounded-2xl" />
         {/* Coral accent line */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-coral-gradient rounded-full" />
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-coral-direct rounded-full" />
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.05}
@@ -31,11 +31,11 @@ export default function CTABanner() {
         />
         <div className="relative z-10 flex flex-col gap-4 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Heart className="w-8 h-8 text-coral group-hover:scale-110 transition-transform duration-300" />
-            <Baby className="w-8 h-8 text-sage group-hover:scale-110 transition-transform duration-300" />
-            <MessageCircle className="w-8 h-8 text-coral group-hover:scale-110 transition-transform duration-300" />
+            <Heart className="w-8 h-8 text-coral-direct group-hover:scale-110 transition-transform duration-300" />
+            <Baby className="w-8 h-8 text-sage-direct group-hover:scale-110 transition-transform duration-300" />
+            <MessageCircle className="w-8 h-8 text-coral-direct group-hover:scale-110 transition-transform duration-300" />
           </div>
-          <h3 className="text-4xl xs:text-5xl sm:text-6xl font-playfair font-semibold text-foreground group-hover:text-coral/90 transition-colors duration-300">
+          <h3 className="text-4xl xs:text-5xl sm:text-6xl font-playfair font-semibold text-foreground group-hover-text-coral-90 transition-colors duration-300">
             Bereit für deine Schwangerschaftsreise?
           </h3>
           <p className="mt-2 text-base xs:text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -61,7 +61,7 @@ export default function CTABanner() {
           <Button
             size="lg"
             variant="outline"
-            className="w-full sm:w-auto rounded-full text-base xs:text-lg px-6 xs:px-8 py-3 xs:py-4 font-medium shadow-none border-coral/30 hover:bg-coral/5 hover:border-coral/50 hover:scale-105 focus-warm transition-all duration-300"
+            className="w-full sm:w-auto rounded-full text-base xs:text-lg px-6 xs:px-8 py-3 xs:py-4 font-medium shadow-none border-coral-30 hover-bg-coral-5 hover-border-coral-50 hover:scale-105 focus-warm transition-all duration-300"
             asChild
           >
             <a href="#features">
