@@ -9,16 +9,16 @@ const Hero = () => {
           {/* <Badge className="bg-primary rounded-full py-1 border-none">
             v1.0.0 is available now! 🚀
           </Badge> */}
-          <h1 className="mt-4 xs:mt-6 sm:mt-8 max-w-[30ch] mx-auto text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-semibold leading-[1.1]! tracking-tight text-foreground">
+          <h1 className="mt-4 xs:mt-6 sm:mt-8 max-w-[30ch] mx-auto text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl heading-hero text-foreground">
             Ihre Schwangerschaft unterstützt rund um die Uhr
           </h1>
-          <p className="mt-6 xs:mt-8 sm:mt-10 max-w-[70ch] mx-auto text-base xs:text-lg sm:text-xl text-muted-foreground font-inter leading-relaxed">
+          <p className="mt-6 xs:mt-8 sm:mt-10 max-w-[70ch] mx-auto text-base xs:text-lg sm:text-xl text-muted-foreground text-body-premium">
             Die Unterstützung, die du brauchst. Antworte auf Fragen, Empfehlungen, plannung hilfe und mehr. 
           </p>
           <div className="mt-12 xs:mt-14 sm:mt-16 md:mt-20 mb-8 xs:mb-10 sm:mb-12 md:mb-16 flex flex-col sm:flex-row items-center sm:justify-center gap-4 xs:gap-6">
             <Button
               size="lg"
-              className="w-full sm:w-auto btn-primary rounded-full text-base xs:text-lg px-6 xs:px-8 py-3 xs:py-4 font-medium"
+              className="w-full sm:w-auto btn-primary rounded-full text-base xs:text-lg px-6 xs:px-8 py-3 xs:py-4 text-body-emphasis"
               asChild
             >
               <a 
