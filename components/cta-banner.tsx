@@ -1,9 +1,30 @@
+"use client";
+
 import { Heart, Baby, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { AnimatedGridPattern } from "./ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
+import { usePostHog } from "@/lib/use-posthog";
 
 export default function CTABanner() {
+  const { track } = usePostHog();
+
+  const handleWhatsAppClick = () => {
+    track('cta_whatsapp_click', {
+      location: 'cta_banner',
+      button_text: 'Jetzt kostenlos starten',
+      target: 'whatsapp'
+    });
+  };
+
+  const handleLearnMoreClick = () => {
+    track('cta_learn_more_click', {
+      location: 'cta_banner',
+      button_text: 'Mehr über Coco erfahren',
+      target: 'features_section'
+    });
+  };
+
   return (
     <div className="px-4 xs:px-6 sm:px-8">
       <div className="relative overflow-hidden my-16 xs:my-20 sm:my-24 md:my-32 w-full bg-card text-foreground max-w-(--breakpoint-lg) mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14 card-border-gradient hover:scale-[1.02] transition-all duration-300 group">
@@ -53,6 +74,7 @@ export default function CTABanner() {
               href="https://wa.me/+15558876420?text=Hallo%20Coco" 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
             >
               Jetzt kostenlos starten
               <MessageCircle className="h-4! w-4! xs:!h-5 xs:!w-5 ml-2 group-hover:rotate-12 transition-transform duration-300" />
@@ -64,7 +86,7 @@ export default function CTABanner() {
             className="w-full sm:w-auto rounded-full text-base xs:text-lg px-6 xs:px-8 py-3 xs:py-4 font-medium shadow-none border-coral-30 hover-bg-coral-5 hover-border-coral-50 hover:scale-105 focus-warm transition-all duration-300"
             asChild
           >
-            <a href="#features">
+            <a href="#features" onClick={handleLearnMoreClick}>
               Mehr über Coco erfahren
               <Heart className="h-4! w-4! xs:!h-5 xs:!w-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
             </a>

@@ -5,6 +5,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "./production-fallback.css";
 import { StructuredData, pregnancySupportSchema, organizationSchema } from "@/components/seo/structured-data";
+import { PostHogProvider } from "@/components/providers/posthog-provider";
+import { CookieConsent } from "@/components/analytics/cookie-consent";
+import { AnalyticsDebug } from "@/components/analytics/analytics-debug";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -113,9 +116,15 @@ export default function RootLayout({
         <StructuredData schema={organizationSchema} />
       </head>
       <body className={`${inter.variable} font-inter antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TooltipProvider>{children}</TooltipProvider>
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <TooltipProvider>
+              {children}
+              <CookieConsent />
+              <AnalyticsDebug />
+            </TooltipProvider>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );

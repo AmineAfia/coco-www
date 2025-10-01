@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { StructuredData, faqSchema } from "@/components/seo/structured-data";
+import { usePostHog } from "@/lib/use-posthog";
 
 const faqData = [
   {
@@ -49,13 +50,22 @@ const faqData = [
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState<string[]>([]);
+  const { track } = usePostHog();
 
   const toggleItem = (id: string) => {
+    const isOpening = !openItems.includes(id);
     setOpenItems(prev => 
       prev.includes(id) 
         ? prev.filter(item => item !== id)
         : [...prev, id]
     );
+    
+    // Track FAQ interactions
+    track('faq_toggle', {
+      faq_id: id,
+      action: isOpening ? 'open' : 'close',
+      question: faqData.find(item => item.id === id)?.question
+    });
   };
 
   return (
