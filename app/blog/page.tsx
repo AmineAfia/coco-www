@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePostHog } from "@/lib/use-posthog";
 
 // Blog posts data - in a real app, this would come from a CMS or database
 const blogPosts = [
@@ -51,6 +54,32 @@ const categories = [
 ];
 
 export default function BlogPage() {
+  const { track } = usePostHog();
+
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  const handleBlogPostClick = (post: { slug: string; title: string; category: string }) => {
+    track('blog_post_click', {
+      post_slug: post.slug,
+      post_title: post.title,
+      post_category: post.category,
+      location: 'blog_listing'
+    });
+  };
+
+  const handleCategoryFilter = (category: string) => {
+    track('blog_category_filter', {
+      category: category,
+      location: 'blog_page'
+    });
+  };
+
+  const handleWhatsAppClick = () => {
+    track('blog_whatsapp_click', {
+      location: 'blog_page',
+      button_text: 'Jetzt mit Coco chatten'
+    });
+  };
+
   return (
     <div className="min-h-screen pt-16 xs:pt-18">
       <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 py-12">
@@ -71,6 +100,7 @@ export default function BlogPage() {
               key={category}
               variant={category === "Alle" ? "default" : "outline"}
               className="rounded-full"
+              onClick={() => handleCategoryFilter(category)}
             >
               {category}
             </Button>
@@ -114,7 +144,12 @@ export default function BlogPage() {
                     </div>
                     
                     <Link href={`/blog/${post.slug}`}>
-                      <Button variant="outline" size="sm" className="rounded-full">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="rounded-full"
+                        onClick={() => handleBlogPostClick(post)}
+                      >
                         Lesen
                         <ArrowRight className="w-4 h-4 ml-1" />
                       </Button>
@@ -157,7 +192,12 @@ export default function BlogPage() {
                     </div>
                     
                     <Link href={`/blog/${post.slug}`}>
-                      <Button variant="outline" size="sm" className="rounded-full">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="rounded-full"
+                        onClick={() => handleBlogPostClick(post)}
+                      >
                         Lesen
                         <ArrowRight className="w-4 h-4 ml-1" />
                       </Button>
@@ -182,6 +222,7 @@ export default function BlogPage() {
               href="https://wa.me/+15558876420?text=Hallo%20Coco"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="inline-flex items-center px-8 py-4 bg-coral-direct text-white rounded-full font-medium hover:bg-coral-direct/90 transition-colors text-lg"
             >
               Jetzt mit Coco chatten

@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePostHog } from "@/lib/use-posthog";
+import { useEffect } from "react";
 
 // This would normally come from a CMS or database
 const blogPost = {
@@ -65,6 +69,33 @@ const blogPost = {
   tags: ["Schwangerschaftswoche 12", "Babyentwicklung", "Ernährung", "Ultraschall"]
 };
 export default function BlogPostPage() {
+  const { track } = usePostHog();
+
+  // Track blog post view
+  useEffect(() => {
+    track('blog_post_view', {
+      post_slug: blogPost.slug,
+      post_title: blogPost.title,
+      post_category: blogPost.category,
+      read_time: blogPost.readTime
+    });
+  }, [track]);
+
+  const handleWhatsAppClick = () => {
+    track('blog_post_whatsapp_click', {
+      post_slug: blogPost.slug,
+      location: 'blog_post',
+      button_text: 'Jetzt mit Coco chatten'
+    });
+  };
+
+  const handleBackToBlog = () => {
+    track('blog_post_back_click', {
+      post_slug: blogPost.slug,
+      location: 'blog_post'
+    });
+  };
+
   // TODO: Implement dynamic blog post content fetching
   return (
     <div className="min-h-screen pt-16 xs:pt-18">
@@ -72,7 +103,11 @@ export default function BlogPostPage() {
         {/* Back Button */}
         <div className="mb-8">
           <Link href="/blog">
-            <Button variant="outline" className="rounded-full">
+            <Button 
+              variant="outline" 
+              className="rounded-full"
+              onClick={handleBackToBlog}
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Zurück zum Blog
             </Button>
@@ -149,6 +184,7 @@ export default function BlogPostPage() {
             href="https://wa.me/+15558876420?text=Hallo%20Coco"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
             className="inline-flex items-center px-8 py-4 bg-coral-direct text-white rounded-full font-medium hover:bg-coral-direct/90 transition-colors text-lg"
           >
             Jetzt mit Coco chatten

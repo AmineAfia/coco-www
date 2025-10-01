@@ -12,6 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 import { CircleCheck, CircleHelp } from "lucide-react";
 import { useState } from "react";
+import { usePostHog } from "@/lib/use-posthog";
 
 const tooltipContent = {
   styles: "Choose from a variety of styles to suit your preferences.",
@@ -69,6 +70,24 @@ const plans = [
 
 const Pricing = () => {
   const [selectedBillingPeriod, setSelectedBillingPeriod] = useState("monthly");
+  const { track } = usePostHog();
+
+  const handleBillingPeriodChange = (period: string) => {
+    setSelectedBillingPeriod(period);
+    track('pricing_billing_period_change', {
+      billing_period: period,
+      location: 'pricing_section'
+    });
+  };
+
+  const handlePlanClick = (planName: string, price: number) => {
+    track('pricing_plan_click', {
+      plan_name: planName,
+      price: price,
+      billing_period: selectedBillingPeriod,
+      location: 'pricing_section'
+    });
+  };
 
   return (
     <div
@@ -80,7 +99,7 @@ const Pricing = () => {
       </h1>
       <Tabs
         value={selectedBillingPeriod}
-        onValueChange={setSelectedBillingPeriod}
+        onValueChange={handleBillingPeriodChange}
         className="mt-8"
       >
         <TabsList className="h-11 px-1.5 rounded-full bg-primary/5">
@@ -124,6 +143,7 @@ const Pricing = () => {
               variant={plan.isPopular ? "default" : "outline"}
               size="lg"
               className="w-full mt-6 text-base"
+              onClick={() => handlePlanClick(plan.name, plan.price)}
             >
               {plan.buttonText}
             </Button>

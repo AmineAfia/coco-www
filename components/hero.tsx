@@ -1,7 +1,20 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { usePostHog } from "@/lib/use-posthog";
 
 const Hero = () => {
+  const { track } = usePostHog();
+
+  const handleWhatsAppClick = () => {
+    track('hero_whatsapp_click', {
+      location: 'hero_section',
+      button_text: 'Kostenlos anfangen',
+      target: 'whatsapp'
+    });
+  };
+
   return (
     <div className="flex flex-col items-center py-16 xs:py-20 sm:py-24 md:py-32 px-4 xs:px-6 sm:px-8 bg-warm-gradient">
       <div className="flex items-center justify-center w-full">
@@ -25,6 +38,7 @@ const Hero = () => {
                 href="https://wa.me/+15558876420?text=Hallo%20Coco" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
               >
                 Kostenlos anfangen
                 {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
