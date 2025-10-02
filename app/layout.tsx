@@ -115,6 +115,20 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
+        {/* Google tag (gtag.js) */}
+        {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17619451585"></script>
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17619451585');
+            `,
+          }}
+        />
         <StructuredData schema={pregnancySupportSchema} />
         <StructuredData schema={organizationSchema} />
       </head>
