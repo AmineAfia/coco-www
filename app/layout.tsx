@@ -17,7 +17,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.ai'),
-  title: "Coco AI - Ihre KI-Begleiterin für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
+  title: "Coco AI - Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
   description:
     "Coco AI bietet 24/7 Schwangerschaftsberatung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
   keywords: [
@@ -34,14 +34,17 @@ export const metadata: Metadata = {
     "Coco AI",
     "Schwangerschaft",
     "KI-Begleiterin",
+    "Begleiter",
+    "Begleiterin",
     "WhatsApp Beratung",
+    "Schwangerschaft",
   ],
   openGraph: {
     type: "website",
     siteName: "Coco AI",
     locale: "de_DE",
     url: process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.ai',
-    title: "Coco AI - Ihre KI-Begleiterin für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
+    title: "Coco AI - Ihre Begleiter` für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
     description:
       "Coco AI bietet 24/7 Schwangerschaftsberatung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
     images: [

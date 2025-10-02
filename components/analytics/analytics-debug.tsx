@@ -55,7 +55,7 @@ export function AnalyticsDebug() {
     { name: 'test_user_action', properties: { action: 'debug_test', test: true } }
   ]
 
-  if (process.env.NODE_ENV !== 'development') return null
+  if (process.env.NODE_ENV !== 'development' || process.env.NEXT_PUBLIC_POSTHOG_DEBUG === 'false') return null
 
   return (
     <div className="fixed top-4 right-4 z-50 max-w-sm bg-card border border-border rounded-lg shadow-lg p-4">

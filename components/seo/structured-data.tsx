@@ -4,7 +4,7 @@ export const pregnancySupportSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Coco AI",
-  "description": "KI-Begleiterin für Schwangerschaftsberatung über WhatsApp",
+  "description": "Begleiter für Schwangerschaftsberatung über WhatsApp",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web, WhatsApp",
   "offers": {
@@ -33,7 +33,7 @@ export const faqSchema = {
       "name": "Wie funktioniert Coco AI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Coco AI ist eine KI-Begleiterin, die über WhatsApp 24/7 Schwangerschaftsberatung anbietet. Sie beantwortet Fragen, gibt wissenschaftlich fundierte Ratschläge und hilft bei der Planung Ihrer Schwangerschaft."
+        "text": "Coco AI ist eine Begleiterin, die über WhatsApp 24/7 Schwangerschaftsberatung anbietet. Sie beantwortet Fragen, gibt wissenschaftlich fundierte Ratschläge und hilft bei der Planung Ihrer Schwangerschaft."
       }
     },
     {
@@ -59,7 +59,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Coco AI",
-  "description": "KI-Begleiterin für Schwangerschaftsberatung",
+  "description": "Begleiter für Schwangerschaftsberatung",
   "url": "https://coco-ai.de",
   "logo": "https://coco-ai.de/coco-logo.png",
   "sameAs": [

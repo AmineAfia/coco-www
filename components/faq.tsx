@@ -9,7 +9,7 @@ const faqData = [
   {
     id: "how-it-works",
     question: "Wie funktioniert Coco AI?",
-    answer: "Coco AI ist eine KI-Begleiterin, die über WhatsApp 24/7 Schwangerschaftsberatung anbietet. Sie beantwortet Ihre Fragen, gibt wissenschaftlich fundierte Ratschläge und hilft bei der Planung Ihrer Schwangerschaft. Einfach WhatsApp öffnen und 'Hallo Coco' schreiben!"
+    answer: "Coco AI ist eine Begleiter, die über WhatsApp 24/7 Schwangerschaftsberatung anbietet. Sie beantwortet Ihre Fragen, gibt wissenschaftlich fundierte Ratschläge und hilft bei der Planung Ihrer Schwangerschaft. Einfach WhatsApp öffnen und 'Hallo Coco' schreiben!"
   },
   {
     id: "is-free",

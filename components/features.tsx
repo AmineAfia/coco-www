@@ -35,7 +35,7 @@ const features = [
   },
   {
     id: "schedule-management",
-    title: "Verwalte deinen Zeitplan",
+    title: "Verwalte deinen Zeitplan (Coming Soon)",
     description: "Coco hilft dir dabei, deinen Zeitplan und deine Aufgaben während der gesamten Schwangerschaft zu verwalten",
     buttonText: "Planen starten",
     buttonAction: "https://wa.me/+15558876420?text=Planen%20starten",
