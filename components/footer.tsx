@@ -7,9 +7,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { getTranslations, type Locale } from "@/lib/translations";
 
+interface FooterProps {
+  locale: Locale;
+}
 
-const Footer = () => {
+const Footer = ({ locale }: FooterProps) => {
+  const t = getTranslations(locale);
   return (
     <footer className="mt-40 bg-warm-gradient border-t border-coral-direct">
       <div className="max-w-(--breakpoint-xl) mx-auto">
@@ -28,7 +33,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-playfair font-semibold text-foreground">Coco</h3>
-                  <p className="text-sm text-muted-foreground">Deine Schwangerschaftsbegleitung</p>
+                  <p className="text-sm text-muted-foreground">{t.footer.tagline}</p>
                 </div>
               </div>
             </div>
@@ -40,14 +45,14 @@ const Footer = () => {
 
             {/* Newsletter & Contact */}
             <div className="lg:col-span-1">
-              <h4 className="text-lg font-semibold text-foreground mb-3">Bleib auf dem Laufenden</h4>
+              <h4 className="text-lg font-semibold text-foreground mb-3">{t.footer.stayUpdated}</h4>
               <p className="text-muted-foreground mb-3">
-                Erhalte wöchentliche Schwangerschaftstipps und Updates direkt in dein WhatsApp.
+                {t.footer.newsletterDescription}
               </p>
               <form className="space-y-2">
                 <Input 
                   type="email" 
-                  placeholder="Deine E-Mail-Adresse" 
+                  placeholder={t.footer.emailPlaceholder} 
                   className="rounded-full"
                 />
                 <Button 
@@ -55,7 +60,7 @@ const Footer = () => {
                   className="w-full btn-primary rounded-full"
                 >
                   <Baby className="w-4 h-4 mr-2" />
-                  Updates erhalten
+                  {t.footer.getUpdates}
                 </Button>
               </form>
             </div>
@@ -72,10 +77,10 @@ const Footer = () => {
               <Link href="/" className="text-foreground hover-text-coral-direct transition-colors">
                 Coco
               </Link>
-              . Alle Rechte vorbehalten.
+              . {t.footer.copyright}
             </p>
             <p className="text-sm text-muted-foreground mt-1">
-              Deine vertrauensvolle Schwangerschaftsbegleitung
+              {t.footer.taglineBottom}
             </p>
           </div>
 
@@ -104,7 +109,7 @@ const Footer = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover-text-coral-direct transition-colors duration-200 focus-warm"
-              aria-label="Besuche unseren Tiktok Kanal"
+              aria-label={t.footer.visitTikTok}
             >
               {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-label="TikTok">
@@ -116,7 +121,7 @@ const Footer = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover-text-coral-direct transition-colors duration-200 focus-warm"
-              aria-label="Chat mit Coco auf WhatsApp"
+              aria-label={t.footer.chatWhatsApp}
             >
               <MessageCircle className="h-5 w-5" />
             </Link>

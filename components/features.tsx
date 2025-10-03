@@ -1,52 +1,61 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, BookOpen, Calendar, CheckSquare, Heart, Sparkles, Target } from "lucide-react";
 import React from "react";
+import { getTranslations, type Locale } from "@/lib/translations";
 
-const features = [
-  {
-    id: "question-chat",
-    title: "Antworte auf jede Frage, die du hast",
-    description: "Egal ob du die Mama oder der Papa bist. Egal wann - Coco beantwortet deine Fragen rund um die Uhr",
-    buttonText: "Frage stellen",
-    buttonAction: "https://wa.me/+15558876420?text=Hallo%20Coco",
-    icon: MessageCircle,
-    layout: "left" as const,
-    visualType: "chat" as const,
-  },
-  {
-    id: "scientific-knowledge",
-    title: "Zugang zu wissenschaftlichem Wissen",
-    description: "Erhalte Zugang zu Wissen aus wissenschaftlichen Büchern über Schwangerschaft, ohne stundenlang lesen zu müssen",
-    buttonText: "Wissen entdecken",
-    buttonAction: "https://wa.me/+15558876420?text=Wissen%20entdecken",
-    icon: BookOpen,
-    layout: "right" as const,
-    visualType: "book" as const,
-  },
-  {
-    id: "weekly-celebration",
-    title: "Coco feiert jede Woche mit dir",
-    description: "Personalisierte Inhalte über die aktuelle Schwangerschaftswoche, die deine Reise begleiten",
-    buttonText: "Woche entdecken",
-    buttonAction: "https://wa.me/+15558876420?text=Woche%20entdecken",
-    icon: Calendar,
-    layout: "left" as const,
-    visualType: "celebration" as const,
-  },
-  {
-    id: "schedule-management",
-    title: "Verwalte deinen Zeitplan (Coming Soon)",
-    description: "Coco hilft dir dabei, deinen Zeitplan und deine Aufgaben während der gesamten Schwangerschaft zu verwalten",
-    buttonText: "Planen starten",
-    buttonAction: "https://wa.me/+15558876420?text=Planen%20starten",
-    icon: CheckSquare,
-    layout: "right" as const,
-    visualType: "schedule" as const,
-  },
-];
+interface FeaturesProps {
+  locale: Locale;
+}
+
+const Features = ({ locale }: FeaturesProps) => {
+  const t = getTranslations(locale);
+
+  const features = [
+    {
+      id: "question-chat",
+      title: t.features.questionChat.title,
+      description: t.features.questionChat.description,
+      buttonText: t.features.questionChat.buttonText,
+      buttonAction: "https://wa.me/+15558876420?text=Hallo%20Coco",
+      icon: MessageCircle,
+      layout: "left" as const,
+      visualType: "chat" as const,
+    },
+    {
+      id: "scientific-knowledge",
+      title: t.features.scientificKnowledge.title,
+      description: t.features.scientificKnowledge.description,
+      buttonText: t.features.scientificKnowledge.buttonText,
+      buttonAction: "https://wa.me/+15558876420?text=Wissen%20entdecken",
+      icon: BookOpen,
+      layout: "right" as const,
+      visualType: "book" as const,
+    },
+    {
+      id: "weekly-celebration",
+      title: t.features.weeklyCelebration.title,
+      description: t.features.weeklyCelebration.description,
+      buttonText: t.features.weeklyCelebration.buttonText,
+      buttonAction: "https://wa.me/+15558876420?text=Woche%20entdecken",
+      icon: Calendar,
+      layout: "left" as const,
+      visualType: "celebration" as const,
+    },
+    {
+      id: "schedule-management",
+      title: t.features.scheduleManagement.title,
+      description: t.features.scheduleManagement.description,
+      buttonText: t.features.scheduleManagement.buttonText,
+      buttonAction: "https://wa.me/+15558876420?text=Planen%20starten",
+      icon: CheckSquare,
+      layout: "right" as const,
+      visualType: "schedule" as const,
+    },
+  ];
 
 // Visual Components
-const QuestionChatVisual = () => {
+const QuestionChatVisual = ({ locale }: { locale: Locale }) => {
+  const t = getTranslations(locale);
   return (
     <div className="relative group">
       {/* Warm minimalist background */}
@@ -60,8 +69,8 @@ const QuestionChatVisual = () => {
             <MessageCircle className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h3 className="font-semibold text-coral-900">24/7 WhatsApp Chat</h3>
-            <p className="text-sm text-coral-700">Sofortige Antworten auf deine Fragen</p>
+            <h3 className="font-semibold text-coral-900">{t.features.questionChat.visual.header}</h3>
+            <p className="text-sm text-coral-700">{t.features.questionChat.visual.subtitle}</p>
           </div>
         </div>
         
@@ -84,7 +93,7 @@ const QuestionChatVisual = () => {
             {/* User question */}
             <div className="flex justify-end">
               <div className="bg-amber-100 border border-amber-200 text-amber-900 rounded-2xl rounded-tr-sm p-3 max-w-xs shadow-sm">
-                <p className="text-sm font-medium text-amber-900">Ist es normal, dass ich so müde bin in Woche 12?</p>
+                <p className="text-sm font-medium text-amber-900">{t.features.questionChat.visual.userQuestion}</p>
                 <span className="text-xs text-amber-600">14:32</span>
               </div>
             </div>
@@ -92,8 +101,8 @@ const QuestionChatVisual = () => {
             {/* Coco's warm response */}
             <div className="flex justify-start">
               <div className="bg-white/90 border border-coral-200/60 rounded-2xl rounded-tl-sm p-3 max-w-xs shadow-sm">
-                <p className="text-sm text-coral-900">Ja, das ist völlig normal! In Woche 12 ist Müdigkeit sehr häufig. Dein Körper arbeitet hart für dein Baby. 💕</p>
-                <p className="text-sm text-amber-800 mt-1 font-medium">Tipp: Mehr Ruhe und Eisen-reiche Ernährung helfen.</p>
+                <p className="text-sm text-coral-900">{t.features.questionChat.visual.cocoResponse}</p>
+                <p className="text-sm text-amber-800 mt-1 font-medium">{t.features.questionChat.visual.tip}</p>
                 <span className="text-xs text-coral-600">14:32 ✓✓</span>
               </div>
             </div>
@@ -104,7 +113,8 @@ const QuestionChatVisual = () => {
   );
 };
 
-const ScientificKnowledgeVisual = () => {
+const ScientificKnowledgeVisual = ({ locale }: { locale: Locale }) => {
+  const t = getTranslations(locale);
   return (
     <div className="relative group">
       {/* Warm minimalist background */}
@@ -118,8 +128,8 @@ const ScientificKnowledgeVisual = () => {
             <BookOpen className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h3 className="font-semibold text-coral-900">Wissenschaftliches Wissen</h3>
-            <p className="text-sm text-coral-700">Zugang zu Forschung ohne stundenlang lesen</p>
+            <h3 className="font-semibold text-coral-900">{t.features.scientificKnowledge.visual.header}</h3>
+            <p className="text-sm text-coral-700">{t.features.scientificKnowledge.visual.subtitle}</p>
           </div>
         </div>
         
@@ -128,15 +138,15 @@ const ScientificKnowledgeVisual = () => {
           {/* Single research card */}
           <div className="bg-gradient-to-r from-coral-50 to-amber-50 rounded-lg p-4 border border-coral-200">
             <div className="flex items-center justify-between mb-3">
-              <h4 className="font-semibold text-coral-900">Entwicklung Woche 12</h4>
+              <h4 className="font-semibold text-coral-900">{t.features.scientificKnowledge.visual.weekTitle}</h4>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-coral-500 rounded-full animate-pulse" />
-                <span className="text-xs text-coral-600">Aktuell</span>
+                <span className="text-xs text-coral-600">{t.features.scientificKnowledge.visual.current}</span>
               </div>
             </div>
-            <p className="text-sm text-coral-800 mb-3">Dein Baby ist jetzt so groß wie eine Pflaume und entwickelt sich rasant. Das Herz schlägt bereits 120-160 Mal pro Minute.</p>
+            <p className="text-sm text-coral-800 mb-3">{t.features.scientificKnowledge.visual.description}</p>
             <div className="flex items-center justify-between">
-              <div className="text-xs text-coral-600">85% verstanden</div>
+              <div className="text-xs text-coral-600">{t.features.scientificKnowledge.visual.understood}</div>
               <div className="w-16 h-2 bg-coral-200 rounded-full">
                 <div className="w-14 h-2 bg-coral-500 rounded-full" />
               </div>
@@ -145,8 +155,8 @@ const ScientificKnowledgeVisual = () => {
           
           {/* Source credibility */}
           <div className="flex gap-2 mt-3">
-            <span className="text-xs bg-coral-100 text-coral-700 px-2 py-1 rounded-full font-medium">Medizinische Studie 2023</span>
-            <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full font-medium">Peer-reviewed</span>
+            <span className="text-xs bg-coral-100 text-coral-700 px-2 py-1 rounded-full font-medium">{t.features.scientificKnowledge.visual.studyTag}</span>
+            <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full font-medium">{t.features.scientificKnowledge.visual.peerReviewed}</span>
           </div>
         </div>
       </div>
@@ -154,7 +164,8 @@ const ScientificKnowledgeVisual = () => {
   );
 };
 
-const WeeklyCelebrationVisual = () => {
+const WeeklyCelebrationVisual = ({ locale }: { locale: Locale }) => {
+  const t = getTranslations(locale);
   return (
     <div className="relative group">
       {/* Warm minimalist background */}
@@ -168,8 +179,8 @@ const WeeklyCelebrationVisual = () => {
             <Sparkles className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h3 className="font-semibold text-coral-900">Wöchentliche Feiern</h3>
-            <p className="text-sm text-coral-700">Coco feiert jede Woche mit dir</p>
+            <h3 className="font-semibold text-coral-900">{t.features.weeklyCelebration.visual.header}</h3>
+            <p className="text-sm text-coral-700">{t.features.weeklyCelebration.visual.subtitle}</p>
           </div>
         </div>
         
@@ -182,8 +193,8 @@ const WeeklyCelebrationVisual = () => {
                 <span className="text-white font-bold">16</span>
               </div>
               <div>
-                <h4 className="font-semibold text-coral-900">Woche 16 - Zeit zu feiern!</h4>
-                <p className="text-sm text-coral-600">So groß wie eine Avocado 🥑</p>
+                <h4 className="font-semibold text-coral-900">{t.features.weeklyCelebration.visual.weekTitle}</h4>
+                <p className="text-sm text-coral-600">{t.features.weeklyCelebration.visual.size}</p>
               </div>
             </div>
             
@@ -191,9 +202,9 @@ const WeeklyCelebrationVisual = () => {
             <div className="bg-white/60 rounded-lg p-3 border border-coral-200">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-4 h-4 text-amber-500" />
-                <span className="font-semibold text-coral-900 text-sm">Diese Woche ist besonders!</span>
+                <span className="font-semibold text-coral-900 text-sm">{t.features.weeklyCelebration.visual.special}</span>
               </div>
-              <p className="text-sm text-coral-800">Dein Baby kann jetzt hören und reagiert auf deine Stimme. Zeit für die erste Unterhaltung! 🎵</p>
+              <p className="text-sm text-coral-800">{t.features.weeklyCelebration.visual.description}</p>
             </div>
           </div>
         </div>
@@ -202,7 +213,8 @@ const WeeklyCelebrationVisual = () => {
   );
 };
 
-const ScheduleManagementVisual = () => {
+const ScheduleManagementVisual = ({ locale }: { locale: Locale }) => {
+  const t = getTranslations(locale);
   return (
     <div className="relative group">
       {/* Warm minimalist background */}
@@ -216,8 +228,8 @@ const ScheduleManagementVisual = () => {
             <Target className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h3 className="font-semibold text-coral-900">Zeitplan verwalten</h3>
-            <p className="text-sm text-coral-700">Coco hilft dir bei der Planung (Coming Soon)</p>
+            <h3 className="font-semibold text-coral-900">{t.features.scheduleManagement.visual.header}</h3>
+            <p className="text-sm text-coral-700">{t.features.scheduleManagement.visual.subtitle}</p>
           </div>
         </div>
         
@@ -229,8 +241,8 @@ const ScheduleManagementVisual = () => {
               <Target className="w-4 h-4 text-white" />
             </div>
             <div>
-              <h4 className="font-semibold text-coral-900 text-sm">Dein Schwangerschaftsplan</h4>
-              <p className="text-xs text-coral-600">Woche 16</p>
+              <h4 className="font-semibold text-coral-900 text-sm">{t.features.scheduleManagement.visual.planTitle}</h4>
+              <p className="text-xs text-coral-600">{t.features.scheduleManagement.visual.week}</p>
             </div>
           </div>
           
@@ -240,19 +252,19 @@ const ScheduleManagementVisual = () => {
               <div className="w-4 h-4 bg-emerald-500 rounded-full flex items-center justify-center">
                 <span className="text-white text-xs">✓</span>
               </div>
-              <span className="text-sm text-coral-900">Arzttermin - 15. Januar</span>
+              <span className="text-sm text-coral-900">{t.features.scheduleManagement.visual.doctorAppointment}</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-4 h-4 border-2 border-coral-300 rounded-full flex items-center justify-center">
                 <div className="w-2 h-2 bg-coral-400 rounded-full" />
               </div>
-              <span className="text-sm text-coral-900">Ultraschall - 22. Januar</span>
+              <span className="text-sm text-coral-900">{t.features.scheduleManagement.visual.ultrasound}</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-4 h-4 border-2 border-coral-300 rounded-full flex items-center justify-center">
                 <div className="w-2 h-2 bg-coral-400 rounded-full" />
               </div>
-              <span className="text-sm text-coral-900">Geburtsvorbereitung</span>
+              <span className="text-sm text-coral-900">{t.features.scheduleManagement.visual.preparation}</span>
             </div>
           </div>
         </div>
@@ -261,7 +273,6 @@ const ScheduleManagementVisual = () => {
   );
 };
 
-const Features = () => {
   return (
     <section id="features" className="w-full pt-8 xs:pt-12 sm:pt-16 md:pt-20 pb-16 xs:pb-20 sm:pb-24 md:pb-32 px-4 xs:px-6 sm:px-8 bg-warm-gradient" aria-labelledby="features-heading">
       <div className="max-w-7xl mx-auto">
@@ -308,10 +319,10 @@ const Features = () => {
 
               {/* Visual */}
               <div className="flex-1 max-w-lg" aria-hidden="true">
-                {feature.visualType === "chat" && <QuestionChatVisual />}
-                {feature.visualType === "book" && <ScientificKnowledgeVisual />}
-                {feature.visualType === "celebration" && <WeeklyCelebrationVisual />}
-                {feature.visualType === "schedule" && <ScheduleManagementVisual />}
+                {feature.visualType === "chat" && <QuestionChatVisual locale={locale} />}
+                {feature.visualType === "book" && <ScientificKnowledgeVisual locale={locale} />}
+                {feature.visualType === "celebration" && <WeeklyCelebrationVisual locale={locale} />}
+                {feature.visualType === "schedule" && <ScheduleManagementVisual locale={locale} />}
               </div>
             </li>
           ))}
