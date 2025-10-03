@@ -82,39 +82,45 @@ const FAQ = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqData.map((item) => (
               <div
                 key={item.id}
-                className="card-warm overflow-hidden hover-lift transition-warm"
+                className="relative group"
               >
-                <button
-                  type="button"
-                  onClick={() => toggleItem(item.id)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-muted/30 transition-warm focus-warm"
-                  aria-expanded={openItems.includes(item.id)}
-                  aria-controls={`faq-answer-${item.id}`}
-                >
-                  <h3 className="text-lg font-semibold text-foreground pr-4 text-body-emphasis">
-                    {item.question}
-                  </h3>
-                  {openItems.includes(item.id) ? (
-                    <ChevronUp className="h-5 w-5 text-coral-direct flex-shrink-0 transition-warm" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5 text-muted-foreground flex-shrink-0 transition-warm" />
-                  )}
-                </button>
+                {/* Warm minimalist background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-coral-50 to-amber-50 rounded-xl shadow-md shadow-coral-200/20" />
                 
-                {openItems.includes(item.id) && (
-                  <div
-                    id={`faq-answer-${item.id}`}
-                    className="px-6 pb-5 border-t border-border/50"
+                {/* Main card content */}
+                <div className="relative bg-coral-50/80 backdrop-blur-sm rounded-xl p-4 border border-coral-200/50 overflow-hidden hover-lift transition-warm">
+                  <button
+                    type="button"
+                    onClick={() => toggleItem(item.id)}
+                    className="w-full text-left flex items-center justify-between hover:bg-coral-100/50 transition-warm focus-warm rounded-lg p-1"
+                    aria-expanded={openItems.includes(item.id)}
+                    aria-controls={`faq-answer-${item.id}`}
                   >
-                    <p className="text-muted-foreground leading-relaxed text-body-premium pt-2">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
+                    <h3 className="text-base font-semibold text-coral-900 pr-3 text-body-emphasis">
+                      {item.question}
+                    </h3>
+                    {openItems.includes(item.id) ? (
+                      <ChevronUp className="h-4 w-4 text-coral-600 flex-shrink-0 transition-warm" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4 text-coral-600 flex-shrink-0 transition-warm" />
+                    )}
+                  </button>
+                  
+                  {openItems.includes(item.id) && (
+                    <div
+                      id={`faq-answer-${item.id}`}
+                      className="mt-3 pt-3 border-t border-coral-200/60"
+                    >
+                      <p className="text-coral-800 leading-relaxed text-sm">
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
