@@ -77,8 +77,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GetCoco.life - Ihre Begleiter für eine sorgenfreie Schwangerschaft",
-    description: "GetCoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
+    title: "Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
+    description: "getcoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
     images: [`${process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life'}/og-image.png`],
   },
   authors: [
@@ -156,6 +156,21 @@ export default function RootLayout({
         />
         <StructuredData schema={pregnancySupportSchema} />
         <StructuredData schema={organizationSchema} />
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content="https://www.getcoco.life" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung" />
+        <meta property="og:description" content="getcoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft." />
+        <meta property="og:image" content="https://getcoco.life/og-image.png" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="getcoco.life" />
+        <meta property="twitter:url" content="https://www.getcoco.life" />
+        <meta name="twitter:title" content="Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung" />
+        <meta name="twitter:description" content="getcoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft." />
+        <meta name="twitter:image" content="https://getcoco.life/og-image.png" />
+        
         {/* Additional OpenGraph meta tags for better social sharing */}
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
