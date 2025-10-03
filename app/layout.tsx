@@ -16,11 +16,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.ai'),
-  title: "Coco AI - Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life'),
+  title: "GetCoco.life - Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
   description:
-    "Coco AI bietet 24/7 Schwangerschaftsberatung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
+    "GetCoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
   keywords: [
+    "getcoco.life",
+    "getcoco",
+    "coco.life",
     "Schwangerschaftsberatung",
     "KI Schwangerschaft",
     "WhatsApp Schwangerschaft", 
@@ -41,12 +44,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    siteName: "Coco AI",
+    siteName: "GetCoco.life",
     locale: "de_DE",
-    url: process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.ai',
-    title: "Coco AI - Ihre Begleiter` für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life',
+    title: "GetCoco.life - Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
     description:
-      "Coco AI bietet 24/7 Schwangerschaftsberatung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
+      "GetCoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
     images: [
       {
         url: "/og-image.png",
@@ -58,11 +61,11 @@ export const metadata: Metadata = {
   },
   authors: [
     {
-      name: "Coco AI",
-      url: "https://getcoco.ai",
+      name: "GetCoco.life",
+      url: "https://getcoco.life",
     },
   ],
-  creator: "Coco AI",
+  creator: "GetCoco.life",
   icons: [
     {
       rel: "icon",
@@ -102,7 +105,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.ai'
+    canonical: process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life'
   },
   manifest: "/site.webmanifest",
 };

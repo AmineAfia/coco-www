@@ -3,7 +3,7 @@ import type React from 'react';
 export const pregnancySupportSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Coco AI",
+  "name": "GetCoco.life",
   "description": "Begleiter für Schwangerschaftsberatung über WhatsApp",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web, WhatsApp",
@@ -14,7 +14,7 @@ export const pregnancySupportSchema = {
   },
   "provider": {
     "@type": "Organization",
-    "name": "Coco AI"
+    "name": "GetCoco.life"
   },
   "featureList": [
     "24/7 Schwangerschaftsberatung",
@@ -58,10 +58,10 @@ export const faqSchema = {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Coco AI",
+  "name": "GetCoco.life",
   "description": "Begleiter für Schwangerschaftsberatung",
-  "url": "https://coco-ai.de",
-  "logo": "https://coco-ai.de/coco-logo.png",
+  "url": "https://getcoco.life",
+  "logo": "https://getcoco.life/coco-logo.png",
   "sameAs": [
     "https://instagram.com/cocoai",
     "https://facebook.com/cocoai",

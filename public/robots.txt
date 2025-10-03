@@ -4,4 +4,4 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 
-Sitemap: https://coco-ai.de/sitemap.xml
+Sitemap: https://getcoco.life/sitemap.xml
