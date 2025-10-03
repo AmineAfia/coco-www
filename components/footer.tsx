@@ -2,11 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import {
-  Instagram,
-  Facebook,
-  Youtube,
   Baby,
-  MessageCircle,
+  MessageCircle
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -84,7 +81,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="flex items-center gap-6">
-            <Link 
+            {/* <Link 
               href="https://instagram.com" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -101,15 +98,18 @@ const Footer = () => {
               aria-label="Folge uns auf Facebook"
             >
               <Facebook className="h-5 w-5" />
-            </Link>
+            </Link> */}
             <Link 
-              href="https://youtube.com" 
+              href="https://www.tiktok.com/@getcoco.life?_r=1&_d=emf6a16kbb9gb0&sec_uid=MS4wLjABAAAACBEPD_VvApVgxHqmanFcJjlm7yOwiJ5qYnoXxPsF7aBp_xQZoIuaEKgNPED1xAoN&share_author_id=7556599852315477014&sharer_language=en&source=h5_m&u_code=emijh9ckkccj0m&item_author_type=1&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=5D50A7FA-C9CA-4ADD-8758-7331F1B510E4&user_id=7556599852315477014&sec_user_id=MS4wLjABAAAACBEPD_VvApVgxHqmanFcJjlm7yOwiJ5qYnoXxPsF7aBp_xQZoIuaEKgNPED1xAoN&social_share_type=5&ug_btm=b8727,b0&utm_campaign=client_share&share_app_id=1233"
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover-text-coral-direct transition-colors duration-200 focus-warm"
-              aria-label="Besuche unseren YouTube Kanal"
+              aria-label="Besuche unseren Tiktok Kanal"
             >
-              <Youtube className="h-5 w-5" />
+              {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-label="TikTok">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
             </Link>
             <Link 
               href="https://wa.me/+15558876420?text=Hallo%20Coco" 
