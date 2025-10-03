@@ -5,12 +5,6 @@ const nextConfig: NextConfig = {
 	compiler: {
 		removeConsole: process.env.NODE_ENV === "production",
 	},
-	// Minimal configuration to avoid Turbopack/Webpack conflicts
-	experimental: {
-		turbo: {
-			// Turbopack-specific rules
-		},
-	},
 };
 
 export default nextConfig;

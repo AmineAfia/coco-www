@@ -1,72 +1,74 @@
 import type React from 'react';
+import { getTranslations, type Locale } from '@/lib/translations';
 
-export const pregnancySupportSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "getcoco.life",
-  "description": "Begleiter für Schwangerschaftsberatung über WhatsApp",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web, WhatsApp",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  },
-  "provider": {
+export const getPregnancySupportSchema = (locale: Locale) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "getcoco.life",
+    "description": locale === 'de' 
+      ? "Begleiter für Schwangerschaftsberatung über WhatsApp"
+      : "Pregnancy consultation companion via WhatsApp",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web, WhatsApp",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": locale === 'de' ? "EUR" : "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "getcoco.life"
+    },
+    "featureList": locale === 'de' 
+      ? [
+          "24/7 Schwangerschaftsberatung",
+          "Wissenschaftliche Antworten",
+          "Wöchentliche Updates",
+          "Planungshilfe"
+        ]
+      : [
+          "24/7 pregnancy consultation",
+          "Scientific answers",
+          "Weekly updates",
+          "Planning assistance"
+        ]
+  };
+};
+
+export const getFaqSchema = (locale: Locale) => {
+  const t = getTranslations(locale);
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": t.faq.questions.slice(0, 3).map(q => ({
+      "@type": "Question",
+      "name": q.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": q.answer
+      }
+    }))
+  };
+};
+
+export const getOrganizationSchema = (locale: Locale) => {
+  return {
+    "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "getcoco.life"
-  },
-  "featureList": [
-    "24/7 Schwangerschaftsberatung",
-    "Wissenschaftliche Antworten",
-    "Wöchentliche Updates",
-    "Planungshilfe"
-  ]
-};
-
-export const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wie funktioniert Coco AI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Coco AI ist eine Begleiterin, die über WhatsApp 24/7 Schwangerschaftsberatung anbietet. Sie beantwortet Fragen, gibt wissenschaftlich fundierte Ratschläge und hilft bei der Planung Ihrer Schwangerschaft."
-      }
-    },
-    {
-      "@type": "Question", 
-      "name": "Ist Coco AI kostenlos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, Coco AI ist kostenlos verfügbar. Sie können jederzeit über WhatsApp mit Coco chatten und alle Funktionen nutzen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie wissenschaftlich fundiert sind die Antworten?",
-      "acceptedAnswer": {
-        "@type": "Answer", 
-        "text": "Coco AI greift auf wissenschaftliche Literatur und Studien zur Schwangerschaft zurück, um Ihnen verlässliche und fundierte Antworten zu geben."
-      }
-    }
-  ]
-};
-
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "getcoco.life",
-  "description": "Begleiter für Schwangerschaftsberatung",
-  "url": "https://getcoco.life",
-  "logo": "https://getcoco.life/coco-logo.png",
-  "sameAs": [
-    "https://instagram.com/cocoai",
-    "https://facebook.com/cocoai",
-    "https://youtube.com/cocoai"
-  ]
+    "name": "getcoco.life",
+    "description": locale === 'de' 
+      ? "Begleiter für Schwangerschaftsberatung"
+      : "Pregnancy consultation companion",
+    "url": "https://getcoco.life",
+    "logo": "https://getcoco.life/coco-logo.png",
+    "sameAs": [
+      "https://instagram.com/cocoai",
+      "https://facebook.com/cocoai",
+      "https://youtube.com/cocoai"
+    ]
+  };
 };
 
 interface StructuredDataProps {

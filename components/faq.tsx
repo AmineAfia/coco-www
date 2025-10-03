@@ -2,53 +2,17 @@
 
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { StructuredData, faqSchema } from "@/components/seo/structured-data";
+import { StructuredData, getFaqSchema } from "@/components/seo/structured-data";
 import { usePostHog } from "@/lib/use-posthog";
+import { getTranslations, type Locale } from "@/lib/translations";
 
-const faqData = [
-  {
-    id: "how-it-works",
-    question: "Wie funktioniert Coco AI?",
-    answer: "Coco AI ist eine Begleiter, die über WhatsApp 24/7 Schwangerschaftsberatung anbietet. Sie beantwortet Ihre Fragen, gibt wissenschaftlich fundierte Ratschläge und hilft bei der Planung Ihrer Schwangerschaft. Einfach WhatsApp öffnen und 'Hallo Coco' schreiben!"
-  },
-  {
-    id: "is-free",
-    question: "Ist Coco AI kostenlos?",
-    answer: "Ja, Coco AI ist vollständig kostenlos verfügbar. Sie können jederzeit über WhatsApp mit Coco chatten und alle Funktionen nutzen, ohne versteckte Kosten oder Abonnements."
-  },
-  {
-    id: "scientific-accuracy",
-    question: "Wie wissenschaftlich fundiert sind die Antworten?",
-    answer: "Coco AI greift auf aktuelle wissenschaftliche Literatur und Studien zur Schwangerschaft zurück. Alle Antworten basieren auf medizinischen Erkenntnissen und werden regelmäßig aktualisiert, um Ihnen die verlässlichsten Informationen zu bieten."
-  },
-  {
-    id: "privacy",
-    question: "Sind meine Daten sicher?",
-    answer: "Absolut! Wir nehmen Datenschutz sehr ernst. Alle Gespräche mit Coco AI sind verschlüsselt und werden nicht an Dritte weitergegeben. Ihre Privatsphäre steht an erster Stelle."
-  },
-  {
-    id: "when-to-use",
-    question: "Wann sollte ich Coco AI nutzen?",
-    answer: "Coco AI ist für alle Schwangerschaftsphasen geeignet - vom ersten Tag bis zur Geburt. Nutzen Sie Coco für Fragen zu Symptomen, Ernährung, Entwicklung Ihres Babys, Terminplanung oder einfach für emotionalen Support."
-  },
-  {
-    id: "replaces-doctor",
-    question: "Ersetzt Coco AI meinen Arzt?",
-    answer: "Nein, Coco AI ersetzt niemals den Besuch bei Ihrem Arzt oder Ihrer Hebamme. Coco ist eine zusätzliche Unterstützung für alltägliche Fragen und bietet erste Orientierung. Bei medizinischen Bedenken sollten Sie immer einen Arzt konsultieren."
-  },
-  {
-    id: "response-time",
-    question: "Wie schnell antwortet Coco AI?",
-    answer: "Coco AI antwortet sofort! Die KI ist 24/7 verfügbar und gibt Ihnen innerhalb von Sekunden eine hilfreiche Antwort. Keine Wartezeiten, keine Öffnungszeiten - Coco ist immer da."
-  },
-  {
-    id: "personalization",
-    question: "Kann Coco AI sich an meine Schwangerschaft anpassen?",
-    answer: "Ja! Coco AI kann sich an Ihre aktuelle Schwangerschaftswoche anpassen und personalisierte Tipps und Informationen geben. Teilen Sie einfach Ihre Schwangerschaftswoche mit, und Coco wird entsprechend beraten."
-  }
-];
+interface FAQProps {
+  locale: Locale;
+}
 
-const FAQ = () => {
+const FAQ = ({ locale }: FAQProps) => {
+  const t = getTranslations(locale);
+  const faqData = t.faq.questions;
   const [openItems, setOpenItems] = useState<string[]>([]);
   const { track } = usePostHog();
 
@@ -70,15 +34,15 @@ const FAQ = () => {
 
   return (
     <>
-      <StructuredData schema={faqSchema} />
+      <StructuredData schema={getFaqSchema(locale)} />
       <section id="faq" className="w-full py-16 xs:py-20 sm:py-24 md:py-32 px-4 xs:px-6 sm:px-8 bg-warm-gradient">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 xs:mb-16">
             <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl heading-hero text-foreground mb-4">
-              Häufig gestellte Fragen
+              {t.faq.title}
             </h2>
             <p className="text-muted-foreground text-lg xs:text-xl max-w-3xl mx-auto text-body-premium">
-              Alles was Sie über Coco AI wissen müssen - von der Nutzung bis zum Datenschutz
+              {t.faq.subtitle}
             </p>
           </div>
 

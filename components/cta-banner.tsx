@@ -5,14 +5,20 @@ import { Button } from "./ui/button";
 import { AnimatedGridPattern } from "./ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import { usePostHog } from "@/lib/use-posthog";
+import { getTranslations, type Locale } from "@/lib/translations";
 
-export default function CTABanner() {
+interface CTABannerProps {
+  locale: Locale;
+}
+
+export default function CTABanner({ locale }: CTABannerProps) {
+  const t = getTranslations(locale);
   const { track } = usePostHog();
 
   const handleWhatsAppClick = () => {
     track('cta_whatsapp_click', {
       location: 'cta_banner',
-      button_text: 'Jetzt kostenlos starten',
+      button_text: t.ctaBanner.startNow,
       target: 'whatsapp'
     });
   };
@@ -20,7 +26,7 @@ export default function CTABanner() {
   const handleLearnMoreClick = () => {
     track('cta_learn_more_click', {
       location: 'cta_banner',
-      button_text: 'Mehr über Coco erfahren',
+      button_text: t.ctaBanner.learnMore,
       target: 'features_section'
     });
   };
@@ -56,11 +62,10 @@ export default function CTABanner() {
               </div>
             </div>
             <h3 className="text-3xl xs:text-4xl sm:text-5xl font-playfair font-semibold text-coral-900">
-              Bereit für deine Schwangerschaftsreise?
+              {t.ctaBanner.title}
             </h3>
             <p className="text-coral-800 text-lg xs:text-xl max-w-2xl mx-auto leading-relaxed">
-              Erhalte 24/7 Unterstützung, wissenschaftliches Wissen und personalisierte Begleitung 
-              für jede Woche deiner Schwangerschaft. Starte jetzt kostenlos!
+              {t.ctaBanner.description}
             </p>
           </div>
           <div className="relative z-10 mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 xs:gap-6">
@@ -72,7 +77,7 @@ export default function CTABanner() {
                 window.open("https://wa.me/+15558876420?text=Hallo%20Coco", "_blank", "noopener,noreferrer");
               }}
             >
-              Jetzt kostenlos starten
+              {t.ctaBanner.startNow}
               <MessageCircle className="h-4! w-4! xs:!h-5 xs:!w-5 ml-2" />
             </Button>
             <Button
@@ -84,7 +89,7 @@ export default function CTABanner() {
                 document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Mehr über Coco erfahren
+              {t.ctaBanner.learnMore}
               <Heart className="h-4! w-4! xs:!h-5 xs:!w-5 ml-2" />
             </Button>
           </div>
