@@ -211,7 +211,7 @@ const ScheduleManagementVisual = () => {
 
 const Features = () => {
   return (
-    <section id="features" className="w-full pt-8 xs:pt-12 sm:pt-16 md:pt-20 pb-16 xs:pb-20 sm:pb-24 md:pb-32 px-4 xs:px-6 sm:px-8" aria-labelledby="features-heading">
+    <section id="features" className="w-full pt-8 xs:pt-12 sm:pt-16 md:pt-20 pb-16 xs:pb-20 sm:pb-24 md:pb-32 px-4 xs:px-6 sm:px-8 bg-warm-gradient" aria-labelledby="features-heading">
       <div className="max-w-7xl mx-auto">
         {/* <h2 id="features-heading" className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-playfair font-semibold text-center text-foreground mb-4">
           Deine Schwangerschaftsbegleitung

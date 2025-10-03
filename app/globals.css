@@ -3,44 +3,44 @@
 @import "tailwindcss";
 
 /* Production-safe CSS variables - defined before @theme for maximum compatibility */
-:root {
-  /* Pregnancy Brand Color System - Production Safe */
-  --background: 45 20% 95%;
-  --foreground: 0 0% 17%;
-  --card: 45 25% 92%;
-  --card-foreground: 0 0% 17%;
-  --popover: 45 20% 95%;
-  --popover-foreground: 0 0% 17%;
-  --primary: 15 65% 60%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 45 15% 88%;
-  --secondary-foreground: 0 0% 17%;
-  --muted: 45 15% 88%;
-  --muted-foreground: 0 0% 35%;
-  --accent: 160 25% 45%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 65% 55%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 45 15% 85%;
-  --input: 45 15% 85%;
-  --ring: 15 65% 60%;
-  
-  /* Pregnancy Brand Specific Colors */
-  --coral: 15 65% 60%;
-  --sage: 160 25% 45%;
-  --dusty-rose: 0 25% 70%;
-  --lavender: 280 20% 65%;
-  --turquoise: 180 45% 45%;
-  --terracotta: 20 50% 55%;
-  
-  --chart-1: 15 65% 60%;
-  --chart-2: 160 25% 45%;
-  --chart-3: 0 25% 70%;
-  --chart-4: 280 20% 65%;
-  --chart-5: 20 50% 55%;
-  
-  --radius: 0.75rem;
-}
+				:root {
+				/* Pregnancy Brand Color System - Production Safe */
+				--background: 35 80% 88%;
+				--foreground: 0 0% 17%;
+				--card: 35 80% 86%;
+				--card-foreground: 0 0% 17%;
+				--popover: 35 80% 88%;
+				--popover-foreground: 0 0% 17%;
+				--primary: 15 65% 60%;
+				--primary-foreground: 0 0% 98%;
+				--secondary: 45 15% 88%;
+				--secondary-foreground: 0 0% 17%;
+				--muted: 45 15% 88%;
+				--muted-foreground: 0 0% 35%;
+				--accent: 160 25% 45%;
+				--accent-foreground: 0 0% 98%;
+				--destructive: 0 65% 55%;
+				--destructive-foreground: 0 0% 98%;
+				--border: 45 15% 85%;
+				--input: 45 15% 85%;
+				--ring: 15 65% 60%;
+
+				/* Pregnancy Brand Specific Colors */
+				--coral: 15 65% 60%;
+				--sage: 160 25% 45%;
+				--dusty-rose: 0 25% 70%;
+				--lavender: 280 20% 65%;
+				--turquoise: 180 45% 45%;
+				--terracotta: 20 50% 55%;
+
+				--chart-1: 15 65% 60%;
+				--chart-2: 160 25% 45%;
+				--chart-3: 0 25% 70%;
+				--chart-4: 280 20% 65%;
+				--chart-5: 20 50% 55%;
+
+				--radius: 0.75rem;
+			}
 
 .dark {
   --background: 45 15% 8%;
@@ -70,53 +70,53 @@
 }
 
 @theme {
-  /* Font families */
-  --font-family-inter: "Inter", system-ui, sans-serif;
-  --font-family-playfair: "Playfair Display", Georgia, serif;
-  
-  /* Custom screens */
-  --breakpoint-xs: 375px;
-  
-  /* Custom animations */
-  --animate-marquee: marquee var(--duration) linear infinite;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-  
-  /* Pregnancy Brand Color System */
-  --color-background: 45 20% 95%;
-  --color-foreground: 0 0% 17%;
-  --color-card: 45 25% 92%;
-  --color-card-foreground: 0 0% 17%;
-  --color-popover: 45 20% 95%;
-  --color-popover-foreground: 0 0% 17%;
-  --color-primary: 15 65% 60%;
-  --color-primary-foreground: 0 0% 98%;
-  --color-secondary: 45 15% 88%;
-  --color-secondary-foreground: 0 0% 17%;
-  --color-muted: 45 15% 88%;
-  --color-muted-foreground: 0 0% 35%;
-  --color-accent: 160 25% 45%;
-  --color-accent-foreground: 0 0% 98%;
-  --color-destructive: 0 65% 55%;
-  --color-destructive-foreground: 0 0% 98%;
-  --color-border: 45 15% 85%;
-  --color-input: 45 15% 85%;
-  --color-ring: 15 65% 60%;
-  
-  /* Pregnancy Brand Specific Colors */
-  --color-coral: 15 65% 60%;
-  --color-sage: 160 25% 45%;
-  --color-dusty-rose: 0 25% 70%;
-  --color-lavender: 280 20% 65%;
-  --color-turquoise: 180 45% 45%;
-  --color-terracotta: 20 50% 55%;
-  
-  --color-chart-1: 15 65% 60%;
-  --color-chart-2: 160 25% 45%;
-  --color-chart-3: 0 25% 70%;
-  --color-chart-4: 280 20% 65%;
-  --color-chart-5: 20 50% 55%;
-  
-  --radius: 0.75rem;
+	/* Font families */
+	--font-family-inter: "Inter", system-ui, sans-serif;
+	--font-family-playfair: "Playfair Display", Georgia, serif;
+
+	/* Custom screens */
+	--breakpoint-xs: 375px;
+
+	/* Custom animations */
+	--animate-marquee: marquee var(--duration) linear infinite;
+	--animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+	/* Pregnancy Brand Color System */
+	--color-background: 35 80% 88%;
+	--color-foreground: 0 0% 17%;
+	--color-card: 35 80% 86%;
+	--color-card-foreground: 0 0% 17%;
+	--color-popover: 35 80% 88%;
+	--color-popover-foreground: 0 0% 17%;
+	--color-primary: 15 65% 60%;
+	--color-primary-foreground: 0 0% 98%;
+	--color-secondary: 45 15% 88%;
+	--color-secondary-foreground: 0 0% 17%;
+	--color-muted: 45 15% 88%;
+	--color-muted-foreground: 0 0% 35%;
+	--color-accent: 160 25% 45%;
+	--color-accent-foreground: 0 0% 98%;
+	--color-destructive: 0 65% 55%;
+	--color-destructive-foreground: 0 0% 98%;
+	--color-border: 45 15% 85%;
+	--color-input: 45 15% 85%;
+	--color-ring: 15 65% 60%;
+
+	/* Pregnancy Brand Specific Colors */
+	--color-coral: 15 65% 60%;
+	--color-sage: 160 25% 45%;
+	--color-dusty-rose: 0 25% 70%;
+	--color-lavender: 280 20% 65%;
+	--color-turquoise: 180 45% 45%;
+	--color-terracotta: 20 50% 55%;
+
+	--color-chart-1: 15 65% 60%;
+	--color-chart-2: 160 25% 45%;
+	--color-chart-3: 0 25% 70%;
+	--color-chart-4: 280 20% 65%;
+	--color-chart-5: 20 50% 55%;
+
+	--radius: 0.75rem;
 }
 
 @layer base {
@@ -134,7 +134,7 @@
 		background: linear-gradient(
 			135deg,
 			hsl(var(--background)) 0%,
-			hsl(45 25% 92%) 100%
+			hsl(35 80% 86%) 100%
 		);
 		font-family: var(--font-inter), "Inter", system-ui, -apple-system,
 			sans-serif;
@@ -258,7 +258,7 @@
 				background: linear-gradient(
 					135deg,
 					hsl(var(--background)) 0%,
-					hsl(45 25% 92%) 100%
+					hsl(35 80% 86%) 100%
 				);
 			}
 
