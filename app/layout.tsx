@@ -67,12 +67,19 @@ export const metadata: Metadata = {
       "GetCoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
     images: [
       {
-        url: "/og-image.png",
+        url: `${process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life'}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Coco AI",
+        alt: "GetCoco.life - Schwangerschaftsbegleitung",
+        type: "image/png",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GetCoco.life - Ihre Begleiter für eine sorgenfreie Schwangerschaft",
+    description: "GetCoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
+    images: [`${process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life'}/og-image.png`],
   },
   authors: [
     {
@@ -149,6 +156,11 @@ export default function RootLayout({
         />
         <StructuredData schema={pregnancySupportSchema} />
         <StructuredData schema={organizationSchema} />
+        {/* Additional OpenGraph meta tags for better social sharing */}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta name="twitter:image:alt" content="GetCoco.life - Schwangerschaftsbegleitung" />
       </head>
       <body className={`${inter.variable} font-inter antialiased`}>
         <PostHogProvider>
