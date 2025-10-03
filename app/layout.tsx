@@ -18,9 +18,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life'),
-  title: "GetCoco.life - Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
+  title: "Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
   description:
-    "GetCoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
+    "getcoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
   keywords: [
     "getcoco.life",
     "getcoco",
@@ -60,18 +60,18 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    siteName: "GetCoco.life",
+    siteName: "getcoco.life",
     locale: "de_DE",
     url: process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life',
-    title: "GetCoco.life - Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
+    title: "Ihre Begleiter für eine sorgenfreie Schwangerschaft | 24/7 WhatsApp Beratung",
     description:
-      "GetCoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
+      "getcoco.life bietet 24/7 Schwangerschaftsbegleitung über WhatsApp. Erhalten Sie wissenschaftlich fundierte Antworten, wöchentliche Updates und persönliche Planungshilfe für Ihre Schwangerschaft.",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_APP_URL || 'https://getcoco.life'}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "GetCoco.life - Schwangerschaftsbegleitung",
+        alt: "getcoco.life - Schwangerschaftsbegleitung",
         type: "image/png",
       },
     ],
@@ -84,11 +84,11 @@ export const metadata: Metadata = {
   },
   authors: [
     {
-      name: "GetCoco.life",
+      name: "getcoco.life",
       url: "https://getcoco.life",
     },
   ],
-  creator: "GetCoco.life",
+  creator: "getcoco.life",
   icons: [
     {
       rel: "icon",
@@ -175,7 +175,7 @@ export default function RootLayout({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
-        <meta name="twitter:image:alt" content="GetCoco.life - Schwangerschaftsbegleitung" />
+        <meta name="twitter:image:alt" content="getcoco.life - Schwangerschaftsbegleitung" />
       </head>
       <body className={`${inter.variable} font-inter antialiased`}>
         <PostHogProvider>
