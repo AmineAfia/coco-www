@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, BookOpen, Calendar, CheckSquare, Clock, Users, Heart, Baby, Stethoscope, BookOpenCheck, Sparkles, Target } from "lucide-react";
+import { MessageCircle, BookOpen, Calendar, CheckSquare, Heart, Sparkles, Target } from "lucide-react";
 import React from "react";
 
 const features = [

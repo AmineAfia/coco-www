@@ -2,6 +2,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import "./production-fallback.css";
 import { StructuredData, pregnancySupportSchema, organizationSchema } from "@/components/seo/structured-data";
@@ -141,19 +142,18 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning>
       <head>
         {/* Google tag (gtag.js) */}
-        {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17619451585"></script>
-        <script
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17619451585');
-            `,
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17619451585"
+          strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17619451585');
+          `}
+        </Script>
         <StructuredData schema={pregnancySupportSchema} />
         <StructuredData schema={organizationSchema} />
         {/* Facebook Meta Tags */}
