@@ -60,36 +60,37 @@ export function CookieConsent({ onAccept, onDecline }: CookieConsentProps) {
 
   return (
     <div className="fixed bottom-4 left-4 z-50 max-w-md">
-      <div className="card-warm p-6 hover:scale-[1.02] transition-all duration-300 group">
-        {/* Warm gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-coral-sage rounded-xl" />
-        {/* Coral accent line */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-coral-direct rounded-full" />
+      <div className="relative group">
+        {/* Warm minimalist background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-coral-50 to-amber-50 rounded-2xl shadow-lg shadow-coral-200/30" />
         
-        <div className="relative z-10">
-          <h3 className="text-xl font-semibold text-foreground mb-3 heading-section">
-            Cookie-Einstellungen
-          </h3>
-          <p className="text-muted-foreground text-sm mb-6 text-body-premium leading-relaxed">
-            Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unsere Website zu analysieren. 
-            Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
-          </p>
-          <div className="flex gap-3">
-            <Button 
-              onClick={handleAccept}
-              size="sm"
-              className="flex-1 btn-primary rounded-full text-sm font-medium focus-warm hover:scale-105 transition-all duration-300"
-            >
-              Akzeptieren
-            </Button>
-            <Button 
-              onClick={handleDecline}
-              variant="outline"
-              size="sm"
-              className="flex-1 rounded-full text-sm font-medium shadow-none border-coral-30 hover-bg-coral-5 hover-border-coral-50 hover:scale-105 focus-warm transition-all duration-300"
-            >
-              Ablehnen
-            </Button>
+        {/* Main card content */}
+        <div className="relative bg-coral-50/80 backdrop-blur-sm rounded-2xl p-6 border border-coral-200/50 overflow-hidden hover-lift transition-warm">
+          <div className="relative z-10">
+            <h3 className="text-xl font-semibold text-coral-900 mb-3">
+              Cookie-Einstellungen
+            </h3>
+            <p className="text-coral-800 text-sm mb-6 leading-relaxed">
+              Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unsere Website zu analysieren. 
+              Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
+            </p>
+            <div className="flex gap-3">
+              <Button 
+                onClick={handleAccept}
+                size="sm"
+                className="flex-1 btn-primary rounded-full text-sm font-medium focus-warm"
+              >
+                Akzeptieren
+              </Button>
+              <Button 
+                onClick={handleDecline}
+                variant="outline"
+                size="sm"
+                className="flex-1 rounded-full text-sm font-medium border-coral-200/60 hover:bg-coral-100/50 hover:border-coral-300/60 focus-warm transition-all duration-300"
+              >
+                Ablehnen
+              </Button>
+            </div>
           </div>
         </div>
       </div>
